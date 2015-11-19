@@ -1,0 +1,569 @@
+Exporting package to 'C:\Development\IDEAS EA AddIn\Profile\ideas_template.xml'
+Retrieving data for export: diagram elements
+Retrieving data for export: links
+Retrieving data for export: constraints
+Retrieving data for export: attribute tagged values
+Retrieving data for export: operation tagged values
+Retrieving data for export: operation parameter tagged values
+Retrieving data for export: connector tagged values
+Completed data retrieval
+Pre-processing export tree...
+Completed pre-processing
+Processing package: IDEAS
+Element:0: 
+Processing package: My IDEAS Model
+Diagram: My IDEAS Diagram
+Processing package: Introduction
+Diagram: Introduction
+Diagram: Diagram Conventions & Use of UML
+Element:1: IDEAS Foundation : IDEAS Top Level
+Element:2: Text
+Element:3: Text
+Element:4: Text
+Element:5: Text
+Element:6: IDEAS Foundation : IDEAS Foundation Key Objects
+Element:7: Text
+Element:8: Introduction : Diagram Conventions & Use of UML
+Element:9: http://www.ideasgroup.org
+Processing package: IDEAS Foundation
+Diagram: IDEAS Top Level
+Diagram: Whole-Part Pattern
+Diagram: Super-Sub-Type Pattern
+Diagram: Type-Instance Pattern
+Diagram: IDEAS Foundation Key Objects
+Diagram: Foundation Powertypes
+Diagram: Tuple & Couple
+Element:10: couple
+Element:11: Individual
+Element:12: IndividualType
+Element:13: Powertype
+Element:14: powertypeInstance
+Element:15: superSubtype
+Element:16: Thing
+Element:17: tuple
+Element:18: TupleType
+Element:19: Type
+Element:20: typeInstance
+Element:21: wholePart
+Element:22: Text
+Element:23: Powertypes : Individual Powertypes
+Element:24: Text
+Element:25: Text
+Element:26: Text
+Element:27: Text
+Element:28: Text
+Element:29: Text
+Element:30: Powertypes : Tuple Powertypes
+Element:31: Text
+Element:32: Text
+Element:33: Note
+Element:34: Text
+Element:35: Text
+Element:36: Text
+Element:37: Text
+Element:38: Tuples :Tuples
+Element:39: Text
+Element:40: Text
+Element:41: Text
+Element:42: Text
+Element:43: Text
+Element:44: Text
+Processing package: Formal Foundation Patterns
+Diagram: Introduction
+Element:45: Text
+Element:46: Text
+Processing package: Disjoint
+Diagram: Disjoint
+Element:47: SetOfDisjointIndividuals
+Element:48: SetOfDisjointThings
+Element:49: SetOfDisjointTypes
+Element:50: Text
+Element:51: Examples : Disjoint - Individuals Example
+Element:52: Text
+Element:53: Examples : Disjoint - Types Example
+Element:54: Text
+Processing package: Intersection
+Diagram: Intersection
+Element:55: IntersectionOfSetOfOverlappingIndividuals
+Element:56: IntersectionOfSetOfOverlappingThings
+Element:57: IntersectionOfSetOfOverlappingTypes
+Element:58: 
+Element:59: Text
+Element:60: Text
+Element:61: Text
+Element:62: 
+Element:63: Examples : Intersection - Example
+Processing package: Numbers
+Diagram: Numbers
+Diagram: Mapping to Scale
+Element:64: RealNumberType
+Element:65: Integer
+Element:66: Number
+Element:67: RealNumber
+Element:68: ScaleMapping
+Element:69: 
+Element:70: 
+Element:71: Text
+Element:72: Text
+Element:73: Text
+Element:74: Text
+Element:75: Text
+Element:76: Examples : Mapping to Scale - Example
+Processing package: Overlap
+Diagram: Overlap
+Diagram: Proper Overlap
+Diagram: Overlapping Part
+Element:77: SetOfOverlappingIndividuals
+Element:78: SetOfOverlappingThings
+Element:79: SetOfOverlappingTypes
+Element:80: SetOfProperOverlappingIndividuals
+Element:81: SetOfProperOverlappingThings
+Element:82: SetOfProperOverlappingTypes
+Element:83: SingletonIndividualType
+Element:84: Text
+Element:85: Examples : Proper Overlap - Individuals Example
+Element:86: Examples : Proper Overlap - Types Example
+Element:87: Examples : Intersection - Example
+Element:88: Text
+Element:89: Text
+Element:90: Text
+Element:91: Overlap : Proper Overlap
+Element:92: Text
+Element:93: Text
+Element:94: Text
+Element:95: Text
+Element:96: Text
+Processing package: Periods of Time
+Diagram: Calendar Period
+Diagram: Duration
+Diagram: MonthsOfTheYear
+Diagram: Days of the Week
+Element:97: April
+Element:98: August
+Element:99: CalendarPeriod
+Element:100: Day
+Element:101: December
+Element:102: February
+Element:103: FractionOfASecond
+Element:104: Friday
+Element:105: Hour
+Element:106: January
+Element:107: July
+Element:108: June
+Element:109: March
+Element:110: May
+Element:111: Millisecond
+Element:112: Minute
+Element:113: Monday
+Element:114: CalendarMonth
+Element:115: Nanosecond
+Element:116: November
+Element:117: October
+Element:118: Saturday
+Element:119: Second
+Element:120: September
+Element:121: SevenDayWeek
+Element:122: Sunday
+Element:123: TenthOfSecond
+Element:124: Thursday
+Element:125: Tuesday
+Element:126: Wednesday
+Element:127: Year
+Element:128: YearQuarter
+Element:129: timeSuperTypeDurationSubtype
+Element:130: Duration
+Element:131: 
+Element:132: Text
+Element:133: Text
+Element:134: Examples : Periods of Time - Examples
+Element:135: 
+Element:136: Text
+Element:137: Text
+Element:138: Text
+Element:139: Text
+Element:140: Text
+Element:141: 
+Element:142: Text
+Element:143: Text
+Processing package: NameSpace
+Diagram: ISO8601
+Diagram: Date-Time Name
+Element:144: DateTimeName
+Element:145: ISO8601-YYYY
+Element:146: ISO8601-YYYY-MM
+Element:147: ISO8601-YYYY-MM-DD
+Element:148: ISO8601-YYYY-MM-DDThh
+Element:149: ISO8601-YYYY-MM-DDThh:mm
+Element:150: ISO8601-YYYY-MM-DDThh:mm:ss
+Element:151: ISO8601-YYYY-MM-DDThh:mm:ss.
+Element:152: ISO8601-YYYY-Qq
+Element:153: ISO8601-YYYY-Www
+Element:154: ISO8601DateTime
+Element:155: dayNamedByISO8601
+Element:156: fractionOfASecondNamedByISO8601
+Element:157: hourNamedByISO8601
+Element:158: minuteNamedByISO8601
+Element:159: monthNamedByISO8601
+Element:160: namedByDateTimeName
+Element:161: quarterNamedByISO8601
+Element:162: secondNamedByISO8601
+Element:163: weekNamedByISO8601
+Element:164: yearNamedByISO8601
+Element:165: Text
+Element:166: Text
+Element:167: Text
+Element:168: Text
+Processing package: Powertypes
+Diagram: Individual Powertypes
+Diagram: WholePart Powertypes
+Diagram: Tuple Powertypes
+Diagram: Introduction to Powertypes
+Diagram: Couple Powertypes
+Diagram: Period or Instant Powertypes
+Diagram: Representation Powertypes
+Element:169: BeforeAfterType
+Element:170: CoupleType
+Element:171: DescriptionType
+Element:172: IndividualTypeType
+Element:173: IndividualTypeTypeType
+Element:174: InstantType
+Element:175: NameType
+Element:176: PeriodType
+Element:177: PlaceableType
+Element:178: RepresentationType
+Element:179: SuperSubtypeType
+Element:180: SuperSubtypeTypeType
+Element:181: TemporalWholePartType
+Element:182: TupleTypeType
+Element:183: TupleTypeTypeType
+Element:184: WholePartType
+Element:185: Text
+Element:186: Text
+Element:187: Text
+Element:188: Text
+Element:189: Text
+Element:190: Text
+Element:191: Text
+Element:192: Text
+Element:193: Text
+Element:194: Text
+Element:195: Text
+Element:196: Text
+Element:197: Text
+Processing package: Singletons, Doubletons, etc.
+Diagram: Singletons, Doubletons, etc.
+Element:198: doubletonTypeInstance
+Element:199: quadrupletonTypeInstance
+Element:200: quintupletonTypeInstance
+Element:201: singletonTypeInstance
+Element:202: tripletonTypeInstance
+Element:203: Doubleton
+Element:204: Quadrupleton
+Element:205: Quintupleton
+Element:206: Singleton
+Element:207: Tripleton
+Element:208: Text
+Element:209: Text
+Processing package: Sum, Fusion & Union
+Diagram: Sum, Fusion & Union
+Diagram: Partition
+Element:210: FusionOfSetOfIndividuals
+Element:211: PartitionOfSetOfDisjointIndividuals
+Element:212: PartitionOfSetOfDisjointThings
+Element:213: PartitionOfSetOfDisjointTypes
+Element:214: SumOfSetOfThings
+Element:215: UnionOfSetOfTypes
+Element:216: Text
+Element:217: Text
+Element:218: Text
+Element:219: Text
+Processing package: Tuples
+Diagram: Tuples
+Element:220: quadruple
+Element:221: quintuple
+Element:222: triple
+Element:223: Text
+Element:224: Text
+Processing package: Foundation Patterns
+Diagram: Introduction
+Element:225: Text
+Element:226: Text
+Processing package: Before After
+Diagram: Before-After
+Element:227: beforeAfter
+Element:228: Text
+Element:229: Text
+Processing package: Intentional Construction
+Diagram: Intentional Construction
+Element:230: IntentionallyConstructedIndividual
+Element:231: intentionallyConstructedTuple
+Element:232: IntentionallyConstructedThing
+Element:233: IntentionallyConstructedType
+Element:234: Text
+Element:235: Text
+Processing package: Properties & Measures
+Diagram: Properties
+Diagram: Measures of Individuals
+Diagram: Measures of Types
+Diagram: Standard Measures
+Diagram: Measures
+Diagram: Measure Representation
+Diagram: Standard Units
+Diagram: Measure Ranges
+Element:236: MeasureType
+Element:237: dispositionManifestation
+Element:238: electricCurrentInAmperes
+Element:239: frequencyInHertz
+Element:240: lengthInMetres
+Element:241: lowerBoundOfMeasureRange
+Element:242: luminousIntensityInCandela
+Element:243: massInKilograms
+Element:244: measureNamedNumericallyBy
+Element:245: measureOfIndividual
+Element:246: measureOfType
+Element:247: measureTypeInstance
+Element:248: temperatureInKelvin
+Element:249: timeInSeconds
+Element:250: upperBoundOfMeasureRange
+Element:251: CategoricalMeasure
+Element:252: DispositionalMeasure
+Element:253: DispositionalProperty
+Element:254: CategoricalProperty
+Element:255: ElectricCurrent
+Element:256: Frequency
+Element:257: Length
+Element:258: LuminousIntensity
+Element:259: Mass
+Element:260: MeasureCategory
+Element:261: MeasurePoint
+Element:262: MeasureNamingScheme
+Element:263: MeasureRange
+Element:264: Measure
+Element:265: NumericMeasureRepresentation
+Element:266: Property
+Element:267: SiUnitRepresentationScheme
+Element:268: ThermodynamicTemperature
+Element:269: Time
+Element:270: ValueInAmperes
+Element:271: ValueInCandela
+Element:272: ValueInHertz
+Element:273: ValueInKelvin
+Element:274: ValueInKilograms
+Element:275: ValueInMetres
+Element:276: ValueInSeconds
+Element:277: Text
+Element:278: 
+Element:279: Text
+Element:280: Examples : Measure Ranges - Example
+Element:281: Text
+Element:282: Examples : Measures of Types - Example
+Element:283: Text
+Element:284: Text
+Element:285: Text
+Element:286: Examples : Disposition Example
+Element:287: Text
+Element:288: 
+Element:289: Text
+Element:290: Examples : Measures of Individuals - Example
+Element:291: 
+Element:292: 
+Element:293: Text
+Element:294: Text
+Element:295: 
+Element:296: 
+Element:297: Examples : Measure Representation - Example
+Element:298: Text
+Element:299: Text
+Element:300: Text
+Element:301: Text
+Element:302: 
+Element:303: Text
+Element:304: Text
+Element:305: Text
+Element:306: Text
+Element:307: Text
+Element:308: Text
+Element:309: 
+Element:310: Text
+Processing package: Period or Instant
+Diagram: Period or Instant
+Diagram: Happens In
+Element:311: Instant
+Element:312: Period
+Element:313: PeriodOrInstant
+Element:314: happensIn
+Element:315: 
+Element:316: Text
+Element:317: Text
+Element:318: Text
+Element:319: Text
+Element:320: 
+Element:321: Examples : Happens In - Example
+Processing package: Temporal Whole Part
+Diagram: Temporal Whole-Part Pattern
+Diagram: Temporal Boundaries
+Element:322: endBoundary
+Element:323: startBoundary
+Element:324: temporalBoundary
+Element:325: temporalWholePart
+Element:326: Text
+Element:327: Examples : Temporal Boundaries - Example
+Element:328: Text
+Element:329: 
+Element:330: Text
+Element:331: 
+Element:332: Text
+Processing package: Representation
+Diagram: Representation
+Diagram: Unique Names
+Diagram: Names
+Diagram: Descriptions
+Diagram: Signs
+Element:333: NumericSign
+Element:334: Sign
+Element:335: IDEASName
+Element:336: NumericSignType
+Element:337: SignType
+Element:338: describedBy
+Element:339: descriptionSchemeInstance
+Element:340: namedBy
+Element:341: namingSchemeInstance
+Element:342: representationSchemeInstance
+Element:343: representedBy
+Element:344: Description
+Element:345: DescriptionScheme
+Element:346: FloatingPointRepresentation
+Element:347: IntegerRepresentation
+Element:348: Name
+Element:349: NamingScheme
+Element:350: Representation
+Element:351: RepresentationScheme
+Element:352: StringDescription
+Element:353: StringName
+Element:354: StringRepresentation
+Element:355: UniqueNamingScheme
+Element:356: Text
+Element:357: Text
+Element:358: Text
+Element:359: Text
+Element:360: Text
+Element:361: Text
+Element:362: Text
+Element:363: Text
+Element:364: Text
+Element:365: Text
+Processing package: Examples
+Diagram: Temporal Boundaries - Example
+Diagram: Happens In - Example
+Diagram: Periods of Time - Examples
+Diagram: Disposition Example
+Diagram: Proper Overlap - Types Example
+Diagram: Proper Overlap - Individuals Example
+Diagram: Disjoint - Individuals Example
+Diagram: Disjoint - Types Example
+Diagram: Numbers - Example
+Diagram: Measures of Individuals - Example
+Diagram: Measures of Types - Example
+Diagram: Measure Ranges - Example
+Diagram: Measure Representation - Example
+Diagram: Intersection - Example
+Diagram: Mapping to Scale - Example
+Element:366: 
+Element:367: -5
+Element:368: 10
+Element:369: 1874-11
+Element:370: 1874-11-30
+Element:371: 1874-11-30T11:12 to 1874-11-30T11:36
+Element:372: 1965-01-24
+Element:373: 2 to 2.4kg
+Element:374: 2.00
+Element:375: 2.40
+Element:376: 2.4kg
+Element:377: 24mins
+Element:378: 2kg
+Element:379: 3/4
+Element:380: Achieving Mach 2
+Element:381: BordersOfFranceAndBelgiumOverlap
+Element:382: CE16-01
+Element:383: CE16-01 Doing Mach 2.1 on 2008-11-01
+Element:384: Capable of Mach 2
+Element:385: Cars
+Element:386: Chris
+Element:387: Dave
+Element:388: DisjointTreesAndHumans
+Element:389: EntireBorderOfBelgium
+Element:390: EntireBorderOfFrance
+Element:391: Eurofighter Typhoon
+Element:392: Eurofighter Typhoon Capable of Mach 2 State
+Element:393: Eurofighter Typhoon State
+Element:394: Human
+Element:395: Ian
+Element:396: Ian, Chris, Dave, That Tree
+Element:397: Ians Laptop
+Element:398: IntersectionsOfFrAndBe
+Element:399: Laptop
+Element:400: My Red Car
+Element:401: My Red Postbox
+Element:402: OverlapOfFrBorderAndBeBorderType
+Element:403: Pi
+Element:404: RedIndividuals
+Element:405: RedIndividualsAndCarsOverlap
+Element:406: Sony Vaio Model XGN32
+Element:407: ThatTree
+Element:408: Tree
+Element:409: TypeTupleIndividualDisjoint
+Element:410: Winston Churchill
+Element:411: Winston Churchill's Birth
+Element:412: Winston Churchill's Death
+Element:413: Your Blue Car
+Element:414: kilogramScaleMappings
+Element:415: 0
+Element:416: 1874
+Element:417: Text
+Element:418: Text
+Element:419: Text
+Element:420: Text
+Element:421: Text
+Element:422: 
+Element:423: Text
+Element:424: Text
+Element:425: Text
+Element:426: Text
+Element:427: Text
+Element:428: Text
+Element:429: Text
+Element:430: Text
+Element:431: Text
+Element:432: Text
+Element:433: Text
+Element:434: Text
+Element:435: Text
+Element:436: Text
+Element:437: 
+Element:438: Text
+Element:439: Text
+Element:440: Text
+Element:441: Text
+Element:442: 
+Element:443: Text
+Element:444: 
+Element:445: Text
+Element:446: 
+Element:447: Text
+Element:448: Text
+Element:449: Text
+Element:450: Text
+Element:451: Text
+Element:452: Text
+Element:453: 
+Element:454: Text
+Element:455: Text
+Element:456: 
+Element:457: Text
+Element:458: 
+Element:459: Text
+Element:460: Text
+Element:461: Text
+Sequencing Interaction Diagrams
+Formatting output XML...please wait
+XMI Document Export Complete!

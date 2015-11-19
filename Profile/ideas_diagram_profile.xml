@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="7741383D-C" name="IDEAS" version="1.0" notes="IDEAS"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="IDEAS" notes="" cx="190" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="diagramID" value="IDEAS"/>
+						<Property name="pdata" value="HideParents=1; HideAtts=1;"/>
+						<Property name="toolbox" value="IDEAS"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

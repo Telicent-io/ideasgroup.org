@@ -1,0 +1,104 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'IDEAS Database Export'
+  ClientHeight = 306
+  ClientWidth = 513
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label6: TLabel
+    Left = 11
+    Top = 65
+    Width = 102
+    Height = 13
+    Caption = 'Root NamingScheme:'
+  end
+  object Label3: TLabel
+    Left = 51
+    Top = 8
+    Width = 62
+    Height = 13
+    Caption = 'Model Name:'
+  end
+  object Label5: TLabel
+    Left = 90
+    Top = 38
+    Width = 23
+    Height = 13
+    Caption = 'URL:'
+  end
+  object ComboBox1: TComboBox
+    Left = 119
+    Top = 62
+    Width = 225
+    Height = 21
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 119
+    Top = 8
+    Width = 225
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 119
+    Top = 35
+    Width = 225
+    Height = 21
+    TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 400
+    Top = 8
+    Width = 100
+    Height = 25
+    Caption = 'Go'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object Memo1: TMemo
+    Left = 0
+    Top = 102
+    Width = 513
+    Height = 204
+    Align = alBottom
+    Color = clBtnFace
+    ScrollBars = ssVertical
+    TabOrder = 4
+    ExplicitTop = 91
+    ExplicitWidth = 508
+  end
+  object Button4: TButton
+    Left = 400
+    Top = 60
+    Width = 100
+    Height = 25
+    Caption = 'Close'
+    TabOrder = 5
+    OnClick = Button4Click
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '*.ideas'
+    Filter = 'IDEAS Database|*.ideas|All Files|*.*'
+    Title = 'Create New IDEAS Database'
+    Left = 208
+    Top = 96
+  end
+  object OpenDialog1: TOpenDialog
+    FileName = '*.ideas'
+    Filter = 'IDEAS Database|*.ideas|All Files|*.*'
+    Title = 'Add to IDEAS Database'
+    Left = 264
+    Top = 96
+  end
+end

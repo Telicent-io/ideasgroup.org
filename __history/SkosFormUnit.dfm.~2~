@@ -1,0 +1,67 @@
+object SkosForm: TSkosForm
+  Left = 0
+  Top = 0
+  Caption = 'SkosForm'
+  ClientHeight = 270
+  ClientWidth = 456
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CheckBox1: TCheckBox
+    Left = 40
+    Top = 32
+    Width = 217
+    Height = 17
+    Caption = 'Export Sub-Classes (superSubtype)'
+    Checked = True
+    State = cbChecked
+    TabOrder = 0
+  end
+  object CheckBox2: TCheckBox
+    Left = 40
+    Top = 55
+    Width = 217
+    Height = 17
+    Caption = 'Export Typical Parts (WholePartType)'
+    Enabled = False
+    TabOrder = 1
+  end
+  object CheckBox3: TCheckBox
+    Left = 40
+    Top = 78
+    Width = 217
+    Height = 17
+    Caption = 'Export Parts'
+    TabOrder = 2
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 344
+    Top = 74
+    Width = 75
+    Height = 25
+    Caption = 'Export'
+    TabOrder = 3
+  end
+  object Memo1: TMemo
+    Left = 8
+    Top = 122
+    Width = 440
+    Height = 140
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 4
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '*.skos'
+    Title = 'Export SKOS'
+    Left = 368
+    Top = 16
+  end
+end

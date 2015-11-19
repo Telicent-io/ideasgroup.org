@@ -1,0 +1,74 @@
+Class,IDEAS:Type,Class,IDEAS:Type,,Class,IDEAS:Type,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:Type,,Class,IDEAS:Type,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:TupleType,Class,IDEAS:TupleType,,Class,IDEAS:TupleType,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:TupleType,Class,IDEAS:TupleType,,Class,IDEAS:TupleType,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:TupleType,Class,IDEAS:Type,,Class,,Generalization,IDEAS:superSubtype,to,Subtype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:TupleType,,Class,,Generalization,IDEAS:superSubtype,from,Supertype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:PlaceableType,Class,IDEAS:PlaceableType,,Class,IDEAS:PlaceableType,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:PlaceableType,Class,IDEAS:PlaceableType,,Class,IDEAS:PlaceableType,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:PlaceableType,Class,IDEAS:Type,,Class,,Generalization,IDEAS:superSubtype,to,Subtype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:PlaceableType,,Class,,Generalization,IDEAS:superSubtype,from,Supertype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:IndividualType,Class,IDEAS:IndividualType,,Class,IDEAS:IndividualType,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:IndividualType,Class,IDEAS:IndividualType,,Class,IDEAS:IndividualType,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:IndividualType,Class,IDEAS:Type,,Class,,Generalization,IDEAS:superSubtype,to,Subtype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:IndividualType,,Class,,Generalization,IDEAS:superSubtype,from,Supertype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:NamingScheme,Class,IDEAS:NamingScheme,,Class,IDEAS:NamingScheme,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:NamingScheme,Class,IDEAS:NamingScheme,,Class,IDEAS:NamingScheme,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:NamingScheme,Class,IDEAS:Type,,Class,,Generalization,IDEAS:superSubtype,to,Subtype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:NamingScheme,,Class,,Generalization,IDEAS:superSubtype,from,Supertype Of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Name,Class,IDEAS:Name,,Class,IDEAS:Name,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:Name,Class,IDEAS:Name,,Class,IDEAS:Name,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:Powertype,,Class,,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Powertype,Class,IDEAS:Type,,Class,,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Powertype,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Generalization,IDEAS:superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:Powertype,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Generalization,IDEAS:superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:Type,,Class,IDEAS:Type,Dependency,IDEAS:typeInstance,to,Instance Of,Add Type,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:IndividualType,Class,IDEAS:Type,,Class,IDEAS:Type,Dependency,IDEAS:typeInstance,to,Instance Of,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:Individual,Class,IDEAS:IndividualType,,,,Dependency,IDEAS:typeInstance,to,Instance Of,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:TupleType,Class,IDEAS:Type,,,,Dependency,IDEAS:typeInstance,to,Instance Of,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,Class,IDEAS:TupleType,,Class,IDEAS:TupleType,Dependency,IDEAS:typeInstance,to,Instance Of,Add Type,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,IDEAS:couple,Class,IDEAS:TupleType,,Class,IDEAS:TupleType,Dependency,IDEAS:typeInstance,to,Instance Of,Add Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:IndividualType,Class,IDEAS:Individual,,,IDEAS:Individual,Dependency,IDEAS:typeInstance,from,Type Of,Add Instance,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:Type,Class,IDEAS:Type,,,,Dependency,IDEAS:typeInstance,from,Type Of,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:Type,Class,IDEAS:TupleType,,,,Dependency,IDEAS:typeInstance,from,Type Of,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:TupleType,n-ary Association,IDEAS:tuple,,n-ary Association,IDEAS:tuple,Dependency,IDEAS:typeInstance,from,Type Of,Add tuple Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:PlaceableType,Class,IDEAS:TupleType,,Class,IDEAS:TupleType,Dependency,IDEAS:typeInstance,from,Type Of,Add TupleType Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:TupleType,n-ary Association,IDEAS:couple,,n-ary Association,IDEAS:couple,Dependency,IDEAS:typeInstance,from,Type Of,Add couple Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:Type,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:TupleType,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:IndividualType,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:NamingScheme,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,IDEAS:Type,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:typeInstance,to,Instance of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:TupleType,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:typeInstance,to,Instance of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:IndividualType,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:typeInstance,to,Instance of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:NamingScheme,Class,IDEAS:Powertype,,Class,IDEAS:Powertype,Dependency,IDEAS:typeInstance,to,Instance of,,TRUE,FALSE,TRUE,TRUE,,0
+Class,IDEAS:Name,Class,IDEAS:NamingScheme,,Class,IDEAS:NamingScheme,Dependency,IDEAS:typeInstance,to,Instance of NamingScheme,Add NamingScheme,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:NamingScheme,Class,IDEAS:Name,,Class,IDEAS:Name,Dependency,IDEAS:typeInstance,from,NamingScheme for,Add Name Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:Name,Class,IDEAS:UniqueNamingScheme,,Class,IDEAS:UniqueNamingScheme,Dependency,IDEAS:typeInstance,to,Instance of UniqueNamingScheme,Add UniqueNamingScheme,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:UniqueNamingScheme,Class,IDEAS:Name,,Class,IDEAS:Name,Dependency,IDEAS:typeInstance,from,UniqueNamingScheme for,Add Name Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,,Class,IDEAS:Name,,Class,IDEAS:Name,Association,IDEAS:namedBy,to,Named By,Add Name,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,Class,IDEAS:Name,,Class,IDEAS:Name,Association,IDEAS:namedBy,to,Named By,Add Name,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:Name,Class,,,,,Association,IDEAS:namedBy,from,Is Name Of,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:Name,n-ary Association,,,,,Association,IDEAS:namedBy,from,Is Name Of,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:Individual,Class,IDEAS:Individual,,Class,IDEAS:Individual,Composition,IDEAS:wholePart,to,Is Part Of,Add Whole,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:Individual,Class,IDEAS:Individual,,Class,IDEAS:Individual,Composition,IDEAS:wholePart,from,Is Whole Of,Add Part,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,Class,,,,,Association,tuplePlace1,to,Place1,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,,Class,,,,,Association,tuplePlace2,to,Place2,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,Class,,,,,Association,tuplePlace3,to,Place3,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,Class,,,,,Association,tuplePlace4,to,Place4,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,Class,,,,,Association,tuplePlace5,to,Place5,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,,n-ary Association,,,,,Association,tuplePlace1,to,Place1,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,,n-ary Association,,,,,Association,tuplePlace2,to,Place2,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,n-ary Association,,,,,Association,tuplePlace3,to,Place3,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,n-ary Association,,,,,Association,tuplePlace4,to,Place4,,TRUE,FALSE,TRUE,TRUE,,
+n-ary Association,IDEAS:tuple,n-ary Association,,,,,Association,tuplePlace5,to,Place5,,TRUE,FALSE,TRUE,TRUE,,
+Class,IDEAS:TupleType,Class,,,Class,IDEAS:Type,Association,place1Type,to,Place1 Type,Add Place 1 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:TupleType,Class,,,Class,IDEAS:Type,Association,place2Type,to,Place2 Type,Add Place 2 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:TupleType,Class,,,Class,IDEAS:Type,Association,place3Type,to,Place3 Type,Add Place 3 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:TupleType,Class,,,Class,IDEAS:Type,Association,place4Type,to,Place4 Type,Add Place 4 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:TupleType,Class,,,Class,IDEAS:Type,Association,place5Type,to,Place5 Type,Add Place 5 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:PlaceableType,Class,,,Class,IDEAS:Type,Association,place1Type,to,Place1 Type,Add Place 1 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:PlaceableType,Class,,,Class,IDEAS:Type,Association,place2Type,to,Place2 Type,Add Place 2 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:PlaceableType,Class,,,Class,IDEAS:Type,Association,place3Type,to,Place3 Type,Add Place 3 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:PlaceableType,Class,,,Class,IDEAS:Type,Association,place4Type,to,Place4 Type,Add Place 4 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,IDEAS:PlaceableType,Class,,,Class,IDEAS:Type,Association,place5Type,to,Place5 Type,Add Place 5 Type,TRUE,TRUE,TRUE,TRUE,,

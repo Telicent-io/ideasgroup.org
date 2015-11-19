@@ -1,0 +1,52 @@
+object Form10: TForm10
+  Left = 0
+  Top = 0
+  Caption = 'Form10'
+  ClientHeight = 337
+  ClientWidth = 472
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 296
+    Width = 472
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object Button1: TButton
+      Left = 384
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Close'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 288
+      Top = 6
+      Width = 90
+      Height = 25
+      Caption = 'Run Checks'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Top = 0
+    Width = 472
+    Height = 296
+    Align = alClient
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+end

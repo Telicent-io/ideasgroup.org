@@ -1,0 +1,86 @@
+unit SkosFormUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, EA_TLB, strUtils, EA_Ideas_Lib, skos_lib,
+  Vcl.StdCtrls;
+
+type
+  TSkosForm = class(TForm)
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    SaveDialog1: TSaveDialog;
+    Button1: TButton;
+    Memo1: TMemo;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Button2: TButton;
+    CheckBox4: TCheckBox;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure getSubElems(elem : iDualElement);
+  private
+    skos : tStringList;
+    { Private declarations }
+  public
+    rep : iDualRepository;
+    rootElem : iDualElement;
+    { Public declarations }
+  end;
+
+var
+  SkosForm: TSkosForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TSkosForm.Button1Click(Sender: TObject);
+var
+  subTypes : tStringList;
+  myHolder : tElemHolder;
+  i : integer;
+begin
+  memo1.Lines.Add(rootElem.Name);
+  skos := tStringList.Create;
+  createConceptScheme(
+  subtypes := getAllSubtypes(rep,rootElem);
+  memo1.Lines.Add(vartostr(subtypes.Count) + ' subtypes');
+  if subtypes.Count > 0 then
+  for i := 0 to subtypes.Count - 1 do
+  begin
+    myHolder := subtypes.Objects[i] as tElemHolder;
+    memo1.Lines.Add(myHolder.name);
+  end;
+end;
+
+procedure TSkosForm.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+procedure  TSkosForm.getSubElems(elem : iDualElement);
+var
+  subTypes : tStringList;
+  myHolder : tElemHolder;
+  i : integer;
+begin
+  memo1.Lines.Add(elem.Name);
+  subtypes := getAllSubtypes(rep,elem);
+  memo1.Lines.Add(vartostr(subtypes.Count) + ' subtypes');
+  if subtypes.Count > 0 then
+  for i := 0 to subtypes.Count - 1 do
+  begin
+    myHolder := subtypes.Objects[i] as tElemHolder;
+    memo1.Lines.Add(myHolder.name);
+    if checkbox4.checked then getSubElems(myHolder.element);
+  end;
+end;
+
+
+end.

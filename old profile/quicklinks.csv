@@ -1,0 +1,44 @@
+Class,Type,Class,Type,,Class,Type,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,Type,Class,Type,,Class,Type,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,TupleType,Class,TupleType,,Class,TupleType,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,TupleType,Class,TupleType,,Class,TupleType,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,Type,Class,Type,,,,Dependency,typeInstance,to,Instance Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,,,,,Class,Type,Dependency,typeInstance,to,,Add Type,TRUE,TRUE,TRUE,TRUE,,
+Class,Individual,Class,Type,,,,Dependency,typeInstance,to,Instance Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,Class,Type,,,,Dependency,typeInstance,to,Instance Of,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,Class,TupleType,,Class,TupleType,Dependency,typeInstance,to,Instance Of,Add Type,TRUE,TRUE,TRUE,TRUE,,
+Class,Type,Class,Individual,,,,Dependency,typeInstance,from,Type Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,Type,Class,Type,,,,Dependency,typeInstance,from,Type Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,Type,Class,TupleType,,,,Dependency,typeInstance,from,Type Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,n-ary Association,,,n-ary Association,tuple,Dependency,typeInstance,from,Type Of,Add tuple Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,,,,n-ary Association,couple,Dependency,typeInstance,from,Type Of,Add couple Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,Type,Class,Type,,Class,Type,Dependency,powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,TupleType,Class,Type,,Class,Type,Dependency,powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,Type,Class,Type,,,,Dependency,powertypeInstance,from,Powertype Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,Name,Class,NameType,,Class,NameType,Dependency,nameTypeInstance,to,Instance of NameType,Add NameType,TRUE,TRUE,TRUE,TRUE,,
+Class,NameType,Class,Name,,Class,Name,Dependency,nameTypeInstance,from,NameType Of,Add Name Instance,TRUE,TRUE,TRUE,TRUE,,
+Class,,Class,Name,,Class,Name,Association,namedBy,to,Named By,Add Name,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,Class,Name,,Class,Name,Association,namedBy,to,Named By,Add Name,TRUE,TRUE,TRUE,TRUE,,
+Class,Name,Class,,,,,Association,namedBy,from,Is Name Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,Name,n-ary Association,,,,,Association,namedBy,from,Is Name Of,,TRUE,TRUE,TRUE,TRUE,,
+Class,Individual,Class,Individual,,Class,Individual,Composition,wholePart,to,Is Part Of,Add Whole,TRUE,TRUE,TRUE,TRUE,,
+Class,Individual,Class,Individual,,Class,Individual,Composition,wholePart,from,Is Whole Of,Add Part,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,Class,,,,,Association,tuplePlace1,to,Place1,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,Class,,,,,Association,tuplePlace2,to,Place2,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,Class,,,,,Association,tuplePlace3,to,Place3,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,Class,,,,,Association,tuplePlace4,to,Place4,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,Class,,,,,Association,tuplePlace5,to,Place5,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,n-ary Association,,,,,Association,tuplePlace1,to,Place1,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,,n-ary Association,,,,,Association,tuplePlace2,to,Place2,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,n-ary Association,,,,,Association,tuplePlace3,to,Place3,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,n-ary Association,,,,,Association,tuplePlace4,to,Place4,,TRUE,TRUE,TRUE,TRUE,,
+n-ary Association,tuple,n-ary Association,,,,,Association,tuplePlace5,to,Place5,,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,Class,,,Class,Type,Association,place1Type,to,Place1 Type,Add Place 1 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,Class,,,Class,Type,Association,place2Type,to,Place2 Type,Add Place 2 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,Class,,,Class,Type,Association,place3Type,to,Place3 Type,Add Place 3 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,Class,,,Class,Type,Association,place4Type,to,Place4 Type,Add Place 4 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,TupleType,Class,,,Class,Type,Association,place5Type,to,Place5 Type,Add Place 5 Type,TRUE,TRUE,TRUE,TRUE,,
+Class,NameType,Class,NameType,,Class,NameType,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,NameType,Class,NameType,,Class,NameType,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0
+Class,Name,Class,Name,,Class,Name,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0
+Class,Name,Class,Name,,Class,Name,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0

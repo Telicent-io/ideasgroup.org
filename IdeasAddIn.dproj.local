@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2007/07/23 15:01:42.705.dproj,C:\Development\IDEAS EA AddIn\IdeasAddIn.dproj=C:\Users\Ian Bailey\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2009/06/04 16:46:09.459.pas,Q:\IDEAS EA AddIn\NewElemForm.pas=Q:\IDEAS EA AddIn\Unit6.pas</Transaction>
+    <Transaction>2009/06/04 16:46:09.459.dfm,Q:\IDEAS EA AddIn\NewElemForm.dfm=Q:\IDEAS EA AddIn\Unit6.dfm</Transaction>
+    <Transaction>2009/10/30 09:01:15.354.pas,C:\Development\lib\EA_Ideas_Lib.pas=C:\Development\IDEAS EA AddIn\Unit6.pas</Transaction>
+    <Transaction>2009/11/06 12:46:32.014.pas,C:\Development\IDEAS EA AddIn\PropertyForm.pas=C:\Development\IDEAS EA AddIn\Unit7.pas</Transaction>
+    <Transaction>2009/11/06 12:46:32.015.dfm,C:\Development\IDEAS EA AddIn\PropertyForm.dfm=C:\Development\IDEAS EA AddIn\Unit7.dfm</Transaction>
+    <Transaction>2009/11/12 14:11:35.535.pas,C:\Development\IDEAS EA AddIn\PropertyForm.pas=</Transaction>
+    <Transaction>2009/11/12 14:11:35.536.dfm,C:\Development\IDEAS EA AddIn\PropertyForm.dfm=</Transaction>
+    <Transaction>2010/06/28 20:00:37.985.pas,C:\Development\IDEAS EA AddIn\Unit8.pas=</Transaction>
+    <Transaction>2010/06/28 20:00:37.986.dfm,C:\Development\IDEAS EA AddIn\Unit8.dfm=</Transaction>
+    <Transaction>2012/04/11 14:40:43.000.490,=Q:\IDEAS EA AddIn\Unit15.pas</Transaction>
+    <Transaction>2012/04/11 14:43:43.000.287,Q:\IDEAS EA AddIn\Unit15.dfm=Q:\IDEAS EA AddIn\diagnosticsForm.dfm</Transaction>
+    <Transaction>2012/04/11 14:43:43.000.287,Q:\IDEAS EA AddIn\Unit15.pas=Q:\IDEAS EA AddIn\diagnosticsForm.pas</Transaction>
+    <Transaction>2013/03/19 13:22:48.000.168,=Z:\Documents\Development\lib\EA_TLB.pas</Transaction>
+    <Transaction>2013/03/19 13:26:55.000.756,=Q:\lib\EA_Ideas_Lib.pas</Transaction>
+    <Transaction>2013/03/19 13:52:30.000.504,=Z:\Documents\Development\IDEAS EA AddIn\Unit16.pas</Transaction>
+    <Transaction>2013/03/20 10:23:25.000.531,=Q:\lib\Visio_TLB.pas</Transaction>
+    <Transaction>2013/05/08 15:14:38.000.765,=Q:\IDEAS EA AddIn\Unit17.pas</Transaction>
+    <Transaction>2013/05/08 15:15:05.000.115,Q:\IDEAS EA AddIn\SkosFormUnit.dfm=Q:\IDEAS EA AddIn\Unit17.dfm</Transaction>
+    <Transaction>2013/05/08 15:15:05.000.115,Q:\IDEAS EA AddIn\SkosFormUnit.pas=Q:\IDEAS EA AddIn\Unit17.pas</Transaction>
+    <Transaction>2013/05/09 11:48:39.000.837,=Q:\lib\skos_lib.pas</Transaction>
+  </Transactions>
+</BorlandProject>

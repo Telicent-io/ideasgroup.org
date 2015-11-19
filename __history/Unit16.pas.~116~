@@ -1,0 +1,395 @@
+unit unit16;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Visio_TLB, Vcl.StdCtrls, EA_TLB, strUtils, EA_Ideas_Lib,
+  Vcl.ExtCtrls;
+
+type
+  tVisElemHolder = class(TElemHolder)
+    visShape : Shape;
+  end;
+
+type
+  TVisioForm = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Memo1: TMemo;
+    ComboBox1: TComboBox;
+    Label1: TLabel;
+    RadioGroup1: TRadioGroup;
+    RadioGroup2: TRadioGroup;
+    ColorBox1: TColorBox;
+    ColorBox2: TColorBox;
+    RadioGroup3: TRadioGroup;
+    ColorBox3: TColorBox;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    visApp : VisioApplication;
+    visDoc, basicShapes, blocks : Document;
+    visPage : Page;
+  public
+    rep : iDualRepository;
+    diag : iDualDiagram;
+    { Public declarations }
+  end;
+
+var
+  VisioForm: TVisioForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TVisioForm.Button1Click(Sender: TObject);
+var
+  i,j, backcolour, bordercolour, fontColour, code, testCol,f_r, f_g, f_b, br_r,br_g,br_b,bk_r,bk_g,bk_b, index1, index2, doHeight, doWidth : integer;
+  minY : real;
+  myDO : iDualDiagramObject;
+  myElem : iDualElement;
+  styleStr, xmlStr, hex, fillColStr, borderColStr, fontColStr : string;
+  holder, relHolder : tVisElemHolder;
+  place1, place2 : tElemHolder;
+  vPlace1, vPlace2 : tVisElemHolder; ///bah! strongly typed fucking language !!!!!
+  elems, rels, doParams : tStringList;
+  roundRect, ellipse, dynConn, square, diamond, rectangle : master;
+  defaultShape : master;
+  myDL : iDualDiagramLink;
+  myConn : iDualConnector;
+  visConn : shape;
+  conBegin, conEnd : cell;
+begin
+  if diag.DiagramObjects.Count > 0 then
+  begin
+    visApp := coVisioApplication.Create;
+    visDoc := visApp.Documents.Add('Basic Diagram.vst');
+    visPage := visDoc.Pages.Item[1];
+    basicShapes := visApp.Documents['Basic Shapes.vss'];
+    blocks := visApp.Documents.OpenEx('BLOCK_M.vss',visOpenDocked);
+    roundRect := basicShapes.Masters['Rounded Rectangle'];
+    ellipse := basicShapes.Masters['Ellipse'];
+    square := basicShapes.Masters['Square'];
+    rectangle := basicShapes.Masters['Rectangle'];
+    dynConn := basicShapes.Masters['Dynamic Connector'];
+    diamond := blocks.Masters['Diamond'];
+    defaultShape := basicShapes.Masters[combobox1.Text];
+    elems := tStringList.Create;
+    elems.Sorted := True;
+    miny := 12;
+    doParams := tStringlist.Create;
+    doParams.Delimiter := ';';
+    for i := 0 to diag.DiagramObjects.Count - 1 do
+    begin
+      myDO := diag.DiagramObjects.GetAt(i) as iDualDiagramObject;
+      myElem := rep.GetElementByID(myDO.ElementID);
+      if (myElem.type_ = 'Class')  then
+      begin
+        memo1.Lines.Add(vartostr(i) + ' - ' + myElem.Name);
+        holder := tVisElemHolder.create(rep,myElem);
+        holder.baseDo := myDO;
+        doParams.Clear;
+        doParams.DelimitedText := vartostr(myDO.Style);
+        holder.id := myElem.ElementID;
+        elems.addObject(vartostr(holder.GUID),holder);
+        doHeight := myDo.top - myDo.bottom;
+        doWidth := myDo.right - myDo.left;
+        memo1.Lines.Add('  - top:' + vartostr(myDo.top) + '  - bottom:' + vartostr(myDo.bottom) + '  - left:' + vartostr(myDo.left) + '  - right:' + vartostr(myDo.right));
+        if not holder.placeable then
+        begin
+          holder.visShape := visPage.Drop(defaultShape,myDo.left/100 + (doWidth/200), 12 + myDO.top/100 - (doHeight/200));
+          holder.visShape.Cells['Width'].Result['inches'] := (doWidth/100);
+          holder.visShape.Cells['Height'].Result['inches'] := (doHeight/100);
+          holder.visShape.Text := holder.Name;
+        end
+        else
+        begin
+          holder.visShape := visPage.Drop(diamond,myDo.left/100 + (doWidth/200),12+myDO.top/100 - (doHeight/200));
+          holder.visShape.Cells['Width'].Result['inches'] := 0.2;
+          holder.visShape.Cells['Height'].Result['inches'] := 0.2;
+        end;
+
+        //Get Font colour (default and overridden)
+        if doParams.values['BFol'] <> '' then xmlStr := doParams.values['BFol'] else
+        begin
+          xmlStr := Rep.SQLQuery('SELECT Fontcolor FROM t_object WHERE Object_ID = ' + vartostr(myElem.ElementID) + ';');
+          xmlStr := RightStr(xmlStr,length(xmlStr) - pos('<Fontcolor>',xmlStr)-10);   //alter minus number depending on length of tag
+          xmlStr := LeftStr(xmlStr,pos('</Fontcolor>',xmlStr)-1);
+          memo1.Lines.Add('non overridden font colour: ' + xmlStr);
+        end;
+        if xmlStr = '-1' then xmlStr := '0';
+        val(xmlStr,fontcolour,code);
+        if code = 0 then
+        begin
+          hex := inttohex(bordercolour,6);
+          f_b := strtoint('$'+leftstr(hex,2));
+          f_g := strtoint('$'+midstr(hex,3,2));
+          f_r := strtoint('$'+rightstr(hex,2));
+        end;
+
+        //Get Border colour (default and overridden)
+        if doParams.values['LCol'] <> '' then xmlStr := doParams.values['LCol'] else
+        begin
+          xmlStr := Rep.SQLQuery('SELECT Bordercolor FROM t_object WHERE Object_ID = ' + vartostr(myElem.ElementID) + ';');
+          xmlStr := RightStr(xmlStr,length(xmlStr) - pos('<Bordercolor>',xmlStr)-12);   //alter minus number depending on length of tag
+          xmlStr := LeftStr(xmlStr,pos('</Bordercolor>',xmlStr)-1);
+          memo1.Lines.Add('non overridden border colour: ' + xmlStr);
+        end;
+        if xmlStr = '-1' then xmlStr := '0';
+        val(xmlStr,bordercolour,code);
+        if code = 0 then
+        begin
+          hex := inttohex(bordercolour,6);
+          br_b := strtoint('$'+leftstr(hex,2));
+          br_g := strtoint('$'+midstr(hex,3,2));
+          br_r := strtoint('$'+rightstr(hex,2));
+        end
+        else
+        begin
+          bk_b := 0;
+          bk_g := 0;
+          bk_r := 0;
+        end;
+
+        if doParams.Values['BCol'] <> '' then xmlStr := doParams.Values['BCol'] else
+        begin
+          xmlStr := Rep.SQLQuery('SELECT Backcolor FROM t_object WHERE Object_ID = ' + vartostr(myElem.ElementID) + ';');
+          xmlStr := RightStr(xmlStr,length(xmlStr) - pos('<Backcolor>',xmlStr)-10);   //alter minus number depending on length of tag
+          xmlStr := LeftStr(xmlStr,pos('</Backcolor>',xmlStr)-1);
+        end;
+
+        val(xmlStr,backcolour,code);
+        if code = 0 then
+        begin
+          hex := inttohex(backcolour,6);
+          bk_b := strtoint('$'+leftstr(hex,2));
+          bk_g := strtoint('$'+midstr(hex,3,2));
+          bk_r := strtoint('$'+rightstr(hex,2));
+        end
+        else
+        begin
+          bk_b := 0;
+          bk_g := 0;
+          bk_r := 0;
+        end;
+
+        case radiogroup1.ItemIndex of
+          0 :  borderColStr := 'RGB('+vartostr(br_r)+','+vartostr(br_g)+','+vartostr(br_b)+')';
+          1 :  borderColStr := 'RGB('+vartostr(bk_r)+','+vartostr(bk_g)+','+vartostr(bk_b)+')';
+          2 :  borderColStr := 'RGB('+vartostr(getrvalue(colorbox1.Selected))+','+vartostr(getgvalue(colorbox1.Selected))+','+vartostr(getbvalue(colorbox1.Selected))+')';
+        end;
+        memo1.Lines.Add('  ...border colour: ' + borderColStr);
+
+        case radiogroup2.ItemIndex of
+          0 :  fillColStr := 'RGB('+vartostr(bk_r)+','+vartostr(bk_g)+','+vartostr(bk_b)+')';
+          1 :  fillColStr := 'RGB('+vartostr(br_r)+','+vartostr(br_g)+','+vartostr(br_b)+')';
+          2 :  fillColStr := 'RGB('+vartostr(getrvalue(colorbox1.Selected))+','+vartostr(getgvalue(colorbox1.Selected))+','+vartostr(getbvalue(colorbox1.Selected))+')';
+        end;
+        memo1.Lines.Add('  ...background colour: ' + fillColStr);
+
+        case radiogroup3.ItemIndex of
+          0 :  fontColStr := 'RGB('+vartostr(f_r)+','+vartostr(f_g)+','+vartostr(f_b)+')';
+          1 :  fillColStr := 'RGB('+vartostr(getrvalue(colorbox3.Selected))+','+vartostr(getgvalue(colorbox3.Selected))+','+vartostr(getbvalue(colorbox3.Selected))+')';
+        end;
+        memo1.Lines.Add('  ...font colour: ' + fillColStr);
+
+
+        holder.visShape.Cells['LineColor'].Formula := borderColStr;
+        holder.visShape.Cells['LineWeight'].Result['pt'] := 1;
+        holder.visShape.Cells['FillForegnd'].Formula := fillColStr;
+        holder.visShape.Cells['Char.color'].Formula := fontColStr;
+        holder.visShape.Data1 := holder.st;
+        holder.visShape.Data2 := holder.element.Notes;
+        holder.visShape.Data3 := holder.GUID;
+
+
+
+        if minY > (myDo.bottom/100 + 12) then minY := (myDo.bottom/100 + 12);
+
+
+      end;
+    end;
+    memo1.Lines.Add('no of diag links: '+vartostr(diag.DiagramLinks.Count));
+
+    //subSupers
+    if diag.DiagramLinks.Count > 0 then
+    for i := 0 to diag.DiagramLinks.Count - 1 do
+    begin
+      myDl := diag.DiagramLinks.GetAt(i) as iDualDiagramLink;
+      myConn := rep.GetConnectorByID(myDl.ConnectorID);
+      memo1.Lines.Add('Connector: ' + myConn.Stereotype);
+      if (myConn.Stereotype = 'IDEAS:superSubtype') or (myConn.stereotype = '') then
+      begin
+        memo1.Lines.Add('  -' + myConn.StyleEx);
+        visConn := visPage.Drop(dynConn, 0, 0);
+        if (myConn.Stereotype = 'IDEAS:superSubtype') then
+        begin
+          visConn.Cells['LineWeight'].Result['pt'] := 1.5;
+          visConn.Cells['ShapeRouteStyle'].ResultIU := 16;
+          visConn.Cells['ConLineRouteExt'].ResultIU := 1;
+          visConn.Cells['EndArrow'].ResultIU := 14;
+          visConn.Cells['EndArrowSize'].ResultIU := 3;
+          visConn.Cells['LineColor'].Formula := 'RGB(0,0,255)';
+          visConn.Data1 := myConn.Stereotype;
+        end;
+
+        conBegin := visConn.Cells['BeginX'];
+        conEnd := visConn.Cells['EndX'];
+
+        if elems.Find(rep.GetElementByID(myConn.ClientID).ElementGUID, index1) then
+        begin
+          if elems.Find(rep.GetElementByID(myConn.SupplierID).ElementGUID, index2) then
+          begin
+
+            vplace1 := elems.Objects[index1] as tVisElemHolder;
+            vplace2 := elems.Objects[index2] as tVisElemHolder;
+            if (myConn.Stereotype = 'IDEAS:superSubtype') then
+            begin
+              conBegin.GlueTo(vplace1.visShape.Cells['AlignTop']);
+              if vplace2.visShape <> nil then conEnd.GlueTo(vplace2.visShape.Cells['AlignBottom']);
+            end
+            else   //place1 is to the right of place2
+            if vplace1.visShape.Cells['PinX'] > vplace2.visShape.Cells['PinX'] then
+            begin
+              conBegin.GlueTo(vplace1.visShape.Cells['AlignLeft']);
+              if vplace2.visShape <> nil then conEnd.GlueTo(vplace2.visShape.Cells['AlignRight']);
+            end
+            else    //place1 is to the left of place2
+            if vplace2.visShape.Cells['PinX'] > vplace1.visShape.Cells['PinX'] then
+            begin
+              conBegin.GlueTo(vplace1.visShape.Cells['AlignRight']);
+              if vplace2.visShape <> nil then conEnd.GlueTo(vplace2.visShape.Cells['AlignLeft']);
+            end
+            else    //place1 is above place2
+            if vplace1.visShape.Cells['PinY'] > vplace2.visShape.Cells['PinY'] then
+            begin
+              conBegin.GlueTo(vplace1.visShape.Cells['AlignBottom']);
+              if vplace2.visShape <> nil then conEnd.GlueTo(vplace2.visShape.Cells['AlignTop']);
+            end
+            else    //place1 is below place2
+            if vplace2.visShape.Cells['PinY'] > vplace1.visShape.Cells['PinY'] then
+            begin
+              conBegin.GlueTo(vplace1.visShape.Cells['AlignTop']);
+              if vplace2.visShape <> nil then conEnd.GlueTo(vplace2.visShape.Cells['AlignBottom']);
+            end;
+          end else memo1.Lines.Add('Element ID: ' + vartostr(myConn.SupplierID) + ' not found on diagram');
+        end else memo1.Lines.Add('Element ID: ' + vartostr(myConn.ClientID) + ' not found on diagram');
+
+        visConn.SendToBack;
+      end;
+    end;
+
+    //placeable elements
+    if elems.Count > 0 then
+    for i := 0 to elems.Count - 1 do
+    begin
+      holder := elems.Objects[i] as tVisElemHolder;
+      memo1.Lines.Add(holder.name);
+      myDO := holder.baseDo;
+      myElem := holder.element;
+      if (holder.placeable) and (holder.visShape <> nil) then
+      begin
+        rels := getRelatedElements(rep,holder.element,'place1Type');
+        if rels.Count > 0 then
+        begin
+          if rels.Count > 1 then memo1.Lines.Add('WARNING - More than one Place1Type found for ' + holder.name);
+          place1 := rels.Objects[0] as tElemHolder;
+          if elems.Find(place1.GUID, index1) then
+          begin
+            vplace1 := elems.Objects[index1] as tVisElemHolder;
+            if (vplace1.visShape <> nil) then
+            begin
+              visConn := visPage.Drop(dynConn, 0, 0);
+              visConn.Cells['LineWeight'].Result['pt'] := 1.2;
+              visConn.Cells['ShapeRouteStyle'].ResultIU := 1;
+              visConn.Cells['ConLineRouteExt'].ResultIU := 2;
+              visConn.Text := holder.name;
+              if holder.element.Abstract = '1' then visConn.Cells['LineColor'].Formula := holder.visShape.cells['LineColor'].Formula
+                 else visConn.Cells['LineColor'].Formula := holder.visShape.cells['FillForegnd'].Formula;
+              conBegin := visConn.Cells['BeginX'];
+              conBegin.GlueTo(holder.visShape.Cells['AlignCenter']);
+              conEnd := visConn.Cells['EndX'];
+              conEnd.GlueTo(vplace1.visShape.Cells['AlignRight']);
+              visConn.Cells['EndArrow'].ResultIU := 3;
+              visConn.Cells['EndArrowSize'].ResultIU := 3;
+              visConn.SendToBack;
+            end else memo1.Lines.Add('  - unable to link to ' + vplace1.name);
+          end;
+        end;
+
+        rels := getRelatedElements(rep,holder.element,'place2Type');
+        if rels.Count > 0 then
+        begin
+          if rels.Count > 1 then memo1.Lines.Add('WARNING - More than one Place2Type found for ' + holder.name);
+          place2 := rels.Objects[0] as tElemHolder;
+          if elems.Find(place2.GUID, index2) then
+          begin
+            vplace2 := elems.Objects[index2] as tVisElemHolder;
+            if (vplace2.visShape <> nil) then
+            begin
+              visConn := visPage.Drop(dynConn, 0, 0);
+              visConn.Cells['LineWeight'].Result['pt'] := 1.2;
+              visConn.Cells['ShapeRouteStyle'].ResultIU := 1;
+              visConn.Cells['ConLineRouteExt'].ResultIU := 2;
+              if holder.element.Abstract = '1' then visConn.Cells['LineColor'].Formula := holder.visShape.cells['LineColor'].Formula
+                 else visConn.Cells['LineColor'].Formula := holder.visShape.cells['FillForegnd'].Formula;
+              conBegin := visConn.Cells['BeginX'];
+              conBegin.GlueTo(holder.visShape.Cells['AlignCenter']);
+              conEnd := visConn.Cells['EndX'];
+              conEnd.GlueTo(vplace2.visShape.Cells['AlignLeft']);
+              visConn.Cells['EndArrow'].ResultIU := 3;
+              visConn.Cells['EndArrowSize'].ResultIU := 3;
+              visConn.SendToBack;
+            end else memo1.Lines.Add('  - unable to link to ' + vplace1.name);
+          end;
+        end;
+
+
+         { rels := getRelatedElements(rep,holder.element,'place2Type');
+          if (rels.Count > 0) and elems.Find(place1.GUID, index1) then
+          begin
+            if rels.Count > 1 then memo1.Lines.Add('WARNING - More than one Place2Type found for ' + holder.name);
+            place2 := rels.Objects[0] as tElemHolder;
+            if elems.Find(place2.GUID, index2) then
+            begin
+              vplace2 := elems.Objects[index2] as tVisElemHolder;
+              memo1.Lines.Add(place1.name + ' - ' + holder.name + ' - ' + place2.name);
+              visConn := visPage.Drop(dynConn, 0, 0);
+              visConn.Text := holder.name;
+              visConn.SendToBack;
+              visConn.Cells['ShapeRouteStyle'].ResultIU := 1;
+              visConn.Cells['ConLineRouteExt'].ResultIU := 2;
+              visConn.Cells['LineWeight'].Result['pt'] := 1;
+              if (vplace1.visShape <> nil) then
+              begin
+                conBegin := visConn.Cells['BeginX'];
+                conBegin.GlueTo(vplace1.visShape.Cells['AlignCenter']);
+              end else memo1.Lines.Add('  - unable to link to ' + vplace1.name);
+              if (vplace2.visShape <> nil) then
+              begin
+                conEnd := visConn.Cells['EndX'];
+                conEnd.GlueTo(vplace2.visShape.Cells['AlignCenter']);
+              end else memo1.Lines.Add('  - unable to link to ' + vplace2.name);
+            end;     }
+      end else memo1.Lines.Add('not relationship: ' + holder.name);
+    end;
+  end;
+  //    visDoc.Close;
+  //    visApp.Quit;
+end;
+
+procedure TVisioForm.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TVisioForm.FormShow(Sender: TObject);
+begin
+  memo1.Lines.Clear;
+end;
+
+end.

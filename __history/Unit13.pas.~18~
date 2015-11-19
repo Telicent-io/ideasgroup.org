@@ -1,0 +1,141 @@
+unit Unit13;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, EA_TLB, EA_Ideas_Lib, StdCtrls, unit3;
+
+type
+  TForm13 = class(TForm)
+    ComboBox1: TComboBox;
+    Label1: TLabel;
+    Button1: TButton;
+    Memo1: TMemo;
+    Button2: TButton;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Label3: TLabel;
+    Edit2: TEdit;
+    SaveDialog1: TSaveDialog;
+    procedure ComboBox1Change(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    rep : iDualRepository;
+    package : iDualPackage;
+  end;
+
+var
+  Form13: TForm13;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm13.Button1Click(Sender: TObject);
+var
+  xml, names : tStringList;
+  myElem, myType, place1, place2 : iDualElement;
+  myConn : iDualConnector;
+  i,j : integer;
+  fcat, typeName : string;
+begin
+  names := tStringList.Create;
+  xml := tStringList.Create;
+  xml.Add('<?xml version="1.0" encoding="UTF-8"?>');
+  xml.Add('  <IdeasData XMLTagsBoundToNamingScheme="' + combobox1.text + '" Model="' + edit1.text + '">');
+  for i := 0 to combobox1.items.Count - 1 do
+  begin
+    xml.Add('    <NamingScheme id="NS' + vartostr(i) + '" ideas:FoundationCategory="NamingScheme" ideas:IdeasName="' + combobox1.Items[i] + '"/>' )
+  end;
+  if package.Elements.Count > 0 then
+  for i := 0 to package.Elements.Count - 1 do
+  begin
+    myElem := package.Elements.GetAt(i) as iDualElement;
+    myType := nil;
+    place1 := nil;
+    place2 := nil;
+    if myElem.Connectors.Count > 0 then
+    for j := 0 to myElem.Connectors.Count - 1 do
+    begin
+      myConn := myElem.Connectors.GetAt(j) as iDualConnector;
+      //rep.GetElementByID(myConnector.SupplierID);    connected element
+      if myConn.ClientID = myElem.ElementID then
+      begin
+        if myConn.Stereotype = 'IDEAS:typeInstance' then
+        begin
+          if myType <> nil then showMessage(myElem.Name + ' appears to be an instance of more than one Type. PES does not support multiple classification');
+          myType := rep.GetElementByID(myConn.supplierID);
+        end;
+        if (myConn.Stereotype = 'place1Type') or (myConn.Stereotype = 'tuplePlace1') then
+        begin
+          if place1 <> nil then showMessage(myElem.Name + ' appears to have more than one tuplePlace1 or place1Type');
+          place1 := rep.GetElementByID(myConn.supplierID);
+        end;
+        if (myConn.Stereotype = 'place2Type') or (myConn.Stereotype = 'tuplePlace2') then
+        begin
+          if place2 <> nil then showMessage(myElem.Name + ' appears to have more than one tuplePlace2 or place2Type');
+          place2 := rep.GetElementByID(myConn.supplierID);
+        end;
+      end;
+    end;
+    if myType <> nil then
+    begin
+      fcat := stringReplace(getFoundationCategory(rep,myType,nil,nil),'ideas:','',[rfReplaceAll]);
+      names := getNames(rep,myType,combobox1.Items,nil);
+      typeName := names[combobox1.ItemIndex];
+      xml.Add('    <' + edit2.text + typeName + ' id="ID' + vartostr(myElem.ElementID) + '" ideas:FoundationCategory="' + fcat + '">');
+      freeAndNil(names);
+      names := getNames(rep,myElem,combobox1.Items,nil);
+      if names.Count > 0 then
+      for j := 0 to names.Count - 1 do
+      begin
+        if names[j] <> '' then xml.Add('      <ideas:Name id="ID' + vartostr(myElem.ElementID) + 'Name' + vartostr(j) + '" namingScheme="NS' + vartostr(j) + '" exemplarText="' +  names[j] + '"/>');
+      end;
+
+
+      xml.Add('    </' + edit2.text + typeName + '>');
+{
+	<IdeasData XMLTagsBoundToNamingScheme="IDEASName" Model="DM2">
+		<NamingScheme id="aaa-bbb-ccc-222" ideas:FoundationCategory="NamingScheme" name="IDEAS Names"/>
+		<NamingScheme id="aaa-bbb-ccc-223" ideas:FoundationCategory="NamingScheme" name="DM2 Names"/>
+		<PerformerType id="aab-bbb-ccc-ddd" ideas:FoundationCategory="IndividualType">
+			<ideas:Name id="aab-bbb-ccc-111" namingScheme="aaa-bbb-ccc-222" exemplarText="Builder"/>
+		</PerformerType>
+		<Performer id="aaa-bbb-ccc-ddd" ideas:FoundationCategory="Individual">
+			<ideas:Name id="aaa-bbb-ccc-111" namingScheme="aaa-bbb-ccc-222" exemplarText="Bob"/>
+			<ideas:Name id="aaa-bbb-ccc-112" namingScheme="aaa-bbb-ccc-223" exemplarText="Robert"/>
+		</Performer>
+		<typeInstance id="aab-abb-ccc-dda" tuplePlace1="aab-bbb-ccc-ddd" tuplePlace2="aaa-bbb-ccc-ddd" ideas:FoundationCategory="typeInstance"/>
+		<PerformerWholePartType id="aab-abb-ccc-add" place1Type="aab-bbb-ccc-ddd" place2Type="aab-bbb-ccc-ddd" place1Name="whole" place2Name="part" ideas:FoundationCategory="WholePartType">
+			<ideas:Name id="acb-bbb-ccc-111" namingScheme="aaa-bbb-ccc-222" exemplarText="builderWholePart"/>
+		</PerformerWholePartType>
+	</IdeasData>
+</IdeasEnvelope>
+}
+
+
+
+    end else showmessage('Could not find a Type for ' + myElem.Name + ' - unable to export as XML');
+  end;
+  xml.Add('  </IdeasData>');
+  saveDialog1.Title := 'Save PES File';
+  if saveDialog1.Execute then xml.SaveToFile(saveDialog1.FileName);
+end;
+
+procedure TForm13.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TForm13.ComboBox1Change(Sender: TObject);
+begin
+  if combobox1.Text <> '' then button1.Enabled := true else button1.Enabled := false;
+
+end;
+
+end.

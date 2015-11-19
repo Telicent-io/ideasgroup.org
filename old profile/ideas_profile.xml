@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="9CD8B6FA-3" name="IDEAS" version="1.0" alias="IDEAS Elements" notes="Alias=IDEAS Elements;Notes=The IDEAS Modelling Elements"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Individual" notes="" cx="90" cy="36" bgcolor="4194368" fontcolor="16777215" bordercolor="65793" borderwidth="1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="tuple" notes="" cx="90" cy="34" bgcolor="8421504" fontcolor="-1" bordercolor="-1" borderwidth="6" hideicon="0">
+				<AppliesTo>
+					<Apply type="n-ary Association"/>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="typeInstance" notes="" cx="90" cy="28" bgcolor="14938876" fontcolor="255" bordercolor="255" borderwidth="1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Dependency">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+				<Constraints>
+					<Constraint name="clientEnd.stereotype=&quot;Type&quot;" type="Invariant" description="" weight="0"/>
+				</Constraints>
+			</Stereotype>
+			<Stereotype name="superSubtype" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="16711680" bordercolor="16711680" borderwidth="1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Generalization">
+						<Property name="direction" value="Source -&gt; Destination"/>
+						<Property name="isSubstitutable" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="nameTypeInstance" notes="" cx="119" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="typeInstance"/>
+			<Stereotype name="Name" notes="" cx="126" cy="46" bgcolor="8454143" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="Type">
+				<TaggedValues>
+					<Tag name="exemplarText" type="String" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="TupleType" notes="" cx="171" cy="59" bgcolor="9699273" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="Type">
+				<TaggedValues>
+					<Tag name="place1_2_displayName" type="String" description="" unit="" values="" default=""/>
+					<Tag name="place2_1_displayName" type="String" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="IDEASModel" notes="" cx="205" cy="59" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Package"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="baseURL" type="String" description="" unit="" values="" default="http://www.modelfutures.com/"/>
+					<Tag name="defaultNameType" type="Classifier:defaultNameType" description="" unit="NameType" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="couple" notes="" cx="90" cy="37" bgcolor="0" fontcolor="16777215" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="tuple"/>
+			<Stereotype name="Type" notes="" cx="138" cy="46" bgcolor="16777215" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="wholePart" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Composition">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="ExternalElement" notes="" cx="175" cy="51" bgcolor="16744703" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="url" type="String" description="" unit="" values="" default="http://www.ideasgroup.org/foundation.rdf#"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="NameType" notes="" cx="90" cy="36" bgcolor="65535" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="Type"/>
+			<Stereotype name="tuplePlace" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="tuplePlace1" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="tuplePlace"/>
+			<Stereotype name="tuplePlace2" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="tuplePlace"/>
+			<Stereotype name="tuplePlace3" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="tuplePlace"/>
+			<Stereotype name="tuplePlace4" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="tuplePlace"/>
+			<Stereotype name="tuplePlace5" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="tuplePlace"/>
+			<Stereotype name="namedBy" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="ExternalNameType" notes="" cx="169" cy="46" bgcolor="65535" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="NameType">
+				<TaggedValues>
+					<Tag name="url" type="String" description="" unit="" values="" default="http://www.ideasgroup.org/foundation.rdf#IdeasNames"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="powertypeInstance" notes="" cx="119" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="typeInstance"/>
+			<Stereotype name="placeType" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="place1Type" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="placeType"/>
+			<Stereotype name="place2Type" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="placeType"/>
+			<Stereotype name="place3Type" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="placeType"/>
+			<Stereotype name="place4Type" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="placeType"/>
+			<Stereotype name="place5Type" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="placeType"/>
+			<Stereotype name="IDEAS" notes="" cx="90" cy="28" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<QuickLink data="Class,Type,Class,Type,,Class,Type,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,Type,Class,Type,,Class,Type,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,TupleType,Class,TupleType,,Class,TupleType,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,TupleType,Class,TupleType,,Class,TupleType,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,Type,Class,Type,,,,Dependency,typeInstance,to,Instance Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,,,,,Class,Type,Dependency,typeInstance,to,,Add Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Individual,Class,Type,,,,Dependency,typeInstance,to,Instance Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,Class,Type,,,,Dependency,typeInstance,to,Instance Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,Class,TupleType,,Class,TupleType,Dependency,typeInstance,to,Instance Of,Add Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Type,Class,Individual,,,,Dependency,typeInstance,from,Type Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Type,Class,Type,,,,Dependency,typeInstance,from,Type Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Type,Class,TupleType,,,,Dependency,typeInstance,from,Type Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,n-ary Association,,,n-ary Association,tuple,Dependency,typeInstance,from,Type Of,Add tuple Instance,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,,,,n-ary Association,couple,Dependency,typeInstance,from,Type Of,Add couple Instance,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Type,Class,Type,,Class,Type,Dependency,powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,TupleType,Class,Type,,Class,Type,Dependency,powertypeInstance,to,Instance of Powertype,Add Powertype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,Type,Class,Type,,,,Dependency,powertypeInstance,from,Powertype Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Name,Class,NameType,,Class,NameType,Dependency,nameTypeInstance,to,Instance of NameType,Add NameType,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,NameType,Class,Name,,Class,Name,Dependency,nameTypeInstance,from,NameType Of,Add Name Instance,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,,Class,Name,,Class,Name,Association,namedBy,to,Named By,Add Name,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,,Class,Name,,Class,Name,Association,namedBy,to,Named By,Add Name,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Name,Class,,,,,Association,namedBy,from,Is Name Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Name,n-ary Association,,,,,Association,namedBy,from,Is Name Of,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Individual,Class,Individual,,Class,Individual,Composition,wholePart,to,Is Part Of,Add Whole,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,Individual,Class,Individual,,Class,Individual,Composition,wholePart,from,Is Whole Of,Add Part,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,,Class,,,,,Association,tuplePlace1,to,Place1,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,,Class,,,,,Association,tuplePlace2,to,Place2,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,Class,,,,,Association,tuplePlace3,to,Place3,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,Class,,,,,Association,tuplePlace4,to,Place4,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,Class,,,,,Association,tuplePlace5,to,Place5,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,,n-ary Association,,,,,Association,tuplePlace1,to,Place1,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,,n-ary Association,,,,,Association,tuplePlace2,to,Place2,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,n-ary Association,,,,,Association,tuplePlace3,to,Place3,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,n-ary Association,,,,,Association,tuplePlace4,to,Place4,,TRUE,TRUE,TRUE,TRUE,,&#xA;n-ary Association,tuple,n-ary Association,,,,,Association,tuplePlace5,to,Place5,,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,Class,,,Class,Type,Association,place1Type,to,Place1 Type,Add Place 1 Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,Class,,,Class,Type,Association,place2Type,to,Place2 Type,Add Place 2 Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,Class,,,Class,Type,Association,place3Type,to,Place3 Type,Add Place 3 Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,Class,,,Class,Type,Association,place4Type,to,Place4 Type,Add Place 4 Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,TupleType,Class,,,Class,Type,Association,place5Type,to,Place5 Type,Add Place 5 Type,TRUE,TRUE,TRUE,TRUE,,&#xA;Class,NameType,Class,NameType,,Class,NameType,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,NameType,Class,NameType,,Class,NameType,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,Name,Class,Name,,Class,Name,Generalization,superSubtype,to,Subtype Of,Add Supertype,TRUE,TRUE,TRUE,TRUE,,0&#xA;Class,Name,Class,Name,,Class,Name,Generalization,superSubtype,from,Supertype Of,Add Subtype,TRUE,TRUE,TRUE,TRUE,,0&#xA;&#xA;"/>
+	</Content>
+</UMLProfile>

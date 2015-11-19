@@ -1,0 +1,27 @@
+object Form9: TForm9
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Form9'
+  ClientHeight = 50
+  ClientWidth = 350
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ProgressBar1: TProgressBar
+    Left = 21
+    Top = 16
+    Width = 321
+    Height = 17
+    TabOrder = 0
+  end
+end

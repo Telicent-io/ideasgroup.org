@@ -1,0 +1,9 @@
+Thankyou for downloading the Model Futures IDEAS Add-In for Sparx Enterprise Architect(TM)
+
+This software is a Beta release, which means it may have bugs. As with any Beta release, the bugs may corrupt data in Sparx. We recommend that you back up all your work prior to trying the Add-In.
+
+Model Futures Ltd. accepts no responsbility for the consequences of bugs in Beta software. You will be using this software AT YOUR OWN RISK.
+
+If you're happy to go ahead and install and use the Add-In at your own risk then please click on "I Agree" below.
+
+All executable code is (c) Model Futures 2006-2010. The IDEAS UML Profile was partially funded by the UK MOD.

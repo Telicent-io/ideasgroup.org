@@ -1,0 +1,63 @@
+unit Unit12;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, EA_TLB, EA_Ideas_Lib;
+
+type
+  TForm12 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Memo1: TMemo;
+    Label4: TLabel;
+    ComboBox1: TComboBox;
+    Label5: TLabel;
+    Edit1: TEdit;
+    Label6: TLabel;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    SaveDialog1: TSaveDialog;
+    CheckBox1: TCheckBox;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    rep : iDualRepository;
+    package : iDualPackage;
+    { Public declarations }
+  end;
+
+var
+  Form12: TForm12;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm12.Button1Click(Sender: TObject);
+var
+  owl : tStringList;
+  errors : tStrings;
+begin
+  if SaveDialog1.Execute then
+  begin
+    errors := memo1.Lines;
+    owl := createOWL(edit1.Text,edit2.text, combobox1.Text,package,rep,errors,self,checkbox1.Checked);
+    owl.SaveToFile(savedialog1.filename);
+    setTaggedValue(package.Element,'owlXmlNS',edit1.Text);
+    setTaggedValue(package.Element,'owlXmlNSID',edit2.Text);
+  end;
+
+end;
+
+procedure TForm12.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+end.

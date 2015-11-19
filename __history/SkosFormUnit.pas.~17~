@@ -1,0 +1,95 @@
+unit SkosFormUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, EA_TLB, strUtils, EA_Ideas_Lib, skos_lib,
+  Vcl.StdCtrls;
+
+type
+  TSkosForm = class(TForm)
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    SaveDialog1: TSaveDialog;
+    Button1: TButton;
+    Memo1: TMemo;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Button2: TButton;
+    CheckBox4: TCheckBox;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Label4: TLabel;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Label5: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure getSubElems(elem : iDualElement; parentConcept : tConcept);
+  private
+    skosSession : tSkosSession;
+    conceptScheme : tCOnceptScheme;
+
+    { Private declarations }
+  public
+    rep : iDualRepository;
+    rootElem : iDualElement;
+    { Public declarations }
+  end;
+
+var
+  SkosForm: TSkosForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TSkosForm.Button1Click(Sender: TObject);
+var
+  subTypes : tStringList;
+  myHolder : tElemHolder;
+  topConcept : tCOncept;
+  i : integer;
+begin
+  if savedialog1.Execute then
+  begin
+    skosSession := tSkosSession.Create('');
+    conceptScheme := skosSession.createConceptScheme(edit1.text,edit4.text,edit3.text,edit5.text, true);
+    topConcept := skossession.createConcept(edit2.Text + xmlclean(rootElem.Name),conceptScheme,false,true);
+    getSubElems(rootElem, topConcept);
+    skosSession.save(savedialog1.FileName);
+  end;
+end;
+
+procedure TSkosForm.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+procedure  TSkosForm.getSubElems(elem : iDualElement; parentConcept : tConcept);
+var
+  subTypes : tStringList;
+  myHolder : tElemHolder;
+  childConcept : tConcept;
+  i : integer;
+begin
+  memo1.Lines.Add(elem.Name);
+  subtypes := getAllSubtypes(rep,elem);
+  memo1.Lines.Add(vartostr(subtypes.Count) + ' subtypes');
+  if subtypes.Count > 0 then
+  for i := 0 to subtypes.Count - 1 do
+  begin
+    myHolder := subtypes.Objects[i] as tElemHolder;
+    childConcept := skossession.createConcept(edit2.Text + xmlclean(myHolder.name),conceptScheme,false,true);
+    skossession.setBroaderNarrower(parentConcept,childConcept);
+    memo1.Lines.Add(myHolder.name);
+    if checkbox4.checked then getSubElems(myHolder.element,childConcept);
+  end;
+end;
+
+
+end.

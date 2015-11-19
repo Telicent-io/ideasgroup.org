@@ -1,0 +1,232 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{815a2f05-8e45-4867-bed0-3a367fe37303}</ProjectGuid>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>IdeasAddIn.ocx</DCC_DependencyCheckOutputName>
+        <MainSource>IdeasAddIn.dpr</MainSource>
+        <ProjectVersion>14.4</ProjectVersion>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Library</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;OleSelfRegister=1</VerInfo_Keys>
+        <VerInfo_DLL>true</VerInfo_DLL>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;System.Win;Winapi;Vcl;Vcl.Imaging;Data.Win;Vcl.Samples;Vcl.Touch;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>2057</VerInfo_Locale>
+        <OutputExt>ocx</OutputExt>
+        <BRCC_IncludePath>Q:\lib;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <DCC_DependencyCheckOutputName>IdeasAddIn.ocx</DCC_DependencyCheckOutputName>
+        <GenDll>true</GenDll>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>IdeasAddIn_Icon.ico</Icon_MainIcon>
+        <DCC_Namespace>Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Debugger_HostApplication>C:\Program Files (x86)\Sparx Systems\EA\EA.exe</Debugger_HostApplication>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>IdeasAddIn_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>False</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_UnitSearchPath>Z:\lib;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>Z:\lib;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>Z:\lib;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>Z:\lib;$(DCC_IncludePath)</DCC_IncludePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>None</Manifest_File>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                    <Parameters Name="HostApplication">C:\Program Files (x86)\Sparx Systems\EA\EA.exe</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">True</VersionInfo>
+                    <VersionInfo Name="Locale">2057</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                    <VersionInfoKeys Name="OleSelfRegister">1</VersionInfoKeys>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">IdeasAddIn.dpr</Source>
+                </Source>
+                <TypeLibOptions>
+                    <TypeLibOptions Name="AutoRegisterTLB">False</TypeLibOptions>
+                    <TypeLibOptions Name="AutoGenImportAssembly">False</TypeLibOptions>
+                </TypeLibOptions>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ActiveXProjectInfo>
+                <version>1</version>
+            </ActiveXProjectInfo>
+            <Platforms>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="IdeasAddIn_TLB.pas"/>
+        <DCCReference Include="Unit1.pas">
+            <CoClasses>AddIn</CoClasses>
+        </DCCReference>
+        <DCCReference Include="IdeasFormImpl.pas">
+            <Form>IdeasForm</Form>
+            <DesignClass>TActiveForm</DesignClass>
+            <CoClasses>IdeasForm</CoClasses>
+        </DCCReference>
+        <DCCReference Include="Unit2.pas">
+            <Form>Form2</Form>
+        </DCCReference>
+        <DCCReference Include="Q:\lib\IdeasLib.pas"/>
+        <DCCReference Include="Q:\lib\owl_lib.pas"/>
+        <DCCReference Include="Q:\lib\MSXML2_TLB.pas"/>
+        <DCCReference Include="Unit3.pas">
+            <Form>Form3</Form>
+        </DCCReference>
+        <DCCReference Include="Unit4.pas">
+            <Form>Form4</Form>
+        </DCCReference>
+        <DCCReference Include="Unit5.pas">
+            <Form>Form5</Form>
+        </DCCReference>
+        <DCCReference Include="NewElemForm.pas">
+            <Form>Form6</Form>
+        </DCCReference>
+        <DCCReference Include="Unit7.pas">
+            <Form>Form7</Form>
+        </DCCReference>
+        <DCCReference Include="Unit9.pas">
+            <Form>Form9</Form>
+        </DCCReference>
+        <DCCReference Include="Unit10.pas">
+            <Form>Form10</Form>
+        </DCCReference>
+        <DCCReference Include="Unit11.pas">
+            <Form>Form11</Form>
+        </DCCReference>
+        <DCCReference Include="Unit12.pas">
+            <Form>Form12</Form>
+        </DCCReference>
+        <DCCReference Include="Unit13.pas">
+            <Form>Form13</Form>
+        </DCCReference>
+        <DCCReference Include="Unit14.pas">
+            <Form>Form14</Form>
+        </DCCReference>
+        <DCCReference Include="diagnosticsForm.pas">
+            <Form>Form15</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Q:\lib\EA_TLB.pas"/>
+        <DCCReference Include="Q:\lib\EA_Ideas_Lib.pas"/>
+        <DCCReference Include="Unit16.pas">
+            <Form>VisioForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Q:\lib\Visio_TLB.pas"/>
+        <DCCReference Include="SkosFormUnit.pas">
+            <Form>SkosForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Q:\lib\skos_lib.pas"/>
+        <RidlCompile Include="IdeasAddIn.ridl"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>
