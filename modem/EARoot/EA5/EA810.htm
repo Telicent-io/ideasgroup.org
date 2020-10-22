@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SV1 - ResourceType - superSubtype hierarchy</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="PageBody">
+	
+<img src="EA811.png" usemap="#EA811" border="0" />
+
+<MAP NAME="EA811">
+<area shape="rect" coords="546,938,719,978" href="EA937.htm" target="_self">
+<area shape="rect" coords="490,837,682,875" href="EA941.htm" target="_self">
+<area shape="rect" coords="885,1014,1058,1054" href="EA945.htm" target="_self">
+<area shape="rect" coords="817,903,990,943" href="EA943.htm" target="_self">
+<area shape="rect" coords="1287,1014,1430,1054" href="EA940.htm" target="_self">
+<area shape="rect" coords="1209,895,1382,935" href="EA935.htm" target="_self">
+<area shape="rect" coords="19,947,192,987" href="EA1020.htm" target="_self">
+<area shape="rect" coords="1597,895,1770,935" href="EA966.htm" target="_self">
+<area shape="rect" coords="1760,577,1959,617" href="EA997.htm" target="_self">
+<area shape="rect" coords="1895,1014,2092,1052" href="EA860.htm" target="_self">
+<area shape="rect" coords="1686,1014,1859,1054" href="EA968.htm" target="_self">
+<area shape="rect" coords="2108,765,2270,805" href="../EA1/EA318.htm" target="_self">
+<area shape="rect" coords="2296,765,2458,805" href="EA858.htm" target="_self">
+<area shape="rect" coords="1038,219,1200,259" href="../EA7/EA1238.htm" target="_self">
+<area shape="rect" coords="709,764,1860,804" href="EA998.htm" target="_self">
+<area shape="rect" coords="1179,298,1922,336" href="EA984.htm" target="_self">
+<area shape="rect" coords="1067,1014,1240,1054" href="EA939.htm" target="_self">
+<area shape="rect" coords="690,1014,863,1054" href="EA944.htm" target="_self">
+<area shape="rect" coords="211,762,384,802" href="EA927.htm" target="_self">
+<area shape="rect" coords="445,582,1261,622" href="EA886.htm" target="_self">
+<area shape="rect" coords="10,580,380,620" href="EA932.htm" target="_self">
+<area shape="rect" coords="363,943,536,983" href="EA936.htm" target="_self">
+<area shape="rect" coords="1481,1014,1654,1054" href="EA967.htm" target="_self">
+<area shape="rect" coords="2112,583,2451,624" href="EA881.htm" target="_self">
+<area shape="rect" coords="10,758,183,798" href="EA856.htm" target="_self">
+<area shape="rect" coords="939,390,1352,430" href="EA987.htm" target="_self">
+<area shape="rect" coords="1072,10,1512,50" href="../EA1/EA2/EA406.htm" target="_self">
+<area shape="rect" coords="1072,128,1512,168" href="../EA1/EA310.htm" target="_self">
+</MAP>
+
+	<div class="ObjectTitle">SV1 - ResourceType - superSubtype hierarchy : Logical diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">30/01/2012 16:31:11</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">15/10/2012 11:49:18</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue">Ian Bailey</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{19271453-D784-4e1b-B44F-E06B119D9382}</td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">A ResponsibleHumanResourceTypeConfigurationUsage that is a type of Person that is used as a component of an ResourceType.&lt;br/&gt;</div>
+
+</div>
+ 
+</body>
+</html>
