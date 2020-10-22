@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("2.1.9:1", "", "Tuples", "EARoot/EA2/EA1/EA9/EA303.htm", "175.png", "285", "0", "", "Logical diagram0","{FB86EE6D-012B-42c9-9B03-672A61A3BA20}");
+tocTab[tocTab.length] = new Array("2.1.9:2", "", "«IDEAS:TupleType» quadruple", "EARoot/EA2/EA1/EA9/EA305.htm", "5.png", "2191", "0", "", "Class0","{1AA058A8-E95E-49d7-922B-E23FD58FC4C0}");
+tocTab[tocTab.length] = new Array("2.1.9:3", "", "«IDEAS:TupleType» quintuple", "EARoot/EA2/EA1/EA9/EA306.htm", "5.png", "2193", "0", "", "Class0","{B4304177-BBB2-4af8-8D64-E7B3B1545BBC}");
+tocTab[tocTab.length] = new Array("2.1.9:4", "", "«IDEAS:TupleType» triple", "EARoot/EA2/EA1/EA9/EA309.htm", "5.png", "2190", "0", "", "Class0","{046DA9FA-B953-4568-996F-425676550D20}");

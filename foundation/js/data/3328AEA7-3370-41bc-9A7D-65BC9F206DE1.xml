@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("2.1.8:1", "", "Sum, Fusion & Union", "EARoot/EA2/EA1/EA8/EA289.htm", "175.png", "315", "0", "", "Logical diagram0","{58C2E519-5165-4f81-88D1-F8592219CC61}");
+tocTab[tocTab.length] = new Array("2.1.8:2", "", "Partition", "EARoot/EA2/EA1/EA8/EA291.htm", "175.png", "317", "0", "", "Logical diagram0","{B212BC13-E9C4-4af6-8ADD-2F67316847FA}");
+tocTab[tocTab.length] = new Array("2.1.8:3", "", "«IDEAS:Type» FusionOfSetOfIndividuals", "EARoot/EA2/EA1/EA8/EA293.htm", "5.png", "2580", "0", "", "Class0","{F0BDAB3B-2898-4133-AA5F-AC1E704380C4}");
+tocTab[tocTab.length] = new Array("2.1.8:4", "", "«IDEAS:Type» PartitionOfSetOfDisjointIndividuals", "EARoot/EA2/EA1/EA8/EA294.htm", "5.png", "2590", "0", "", "Class0","{75503D05-D6AE-4975-9D24-84F49F879ED5}");
+tocTab[tocTab.length] = new Array("2.1.8:5", "", "«IDEAS:Type» PartitionOfSetOfDisjointThings", "EARoot/EA2/EA1/EA8/EA295.htm", "5.png", "2589", "0", "", "Class0","{6D4F2282-D1EE-46c1-9673-ED7B5AF9D41B}");
+tocTab[tocTab.length] = new Array("2.1.8:6", "", "«IDEAS:Type» PartitionOfSetOfDisjointTypes", "EARoot/EA2/EA1/EA8/EA296.htm", "5.png", "2591", "0", "", "Class0","{85A84CAF-1FEF-4fa4-B634-29F3D1BDFA7F}");
+tocTab[tocTab.length] = new Array("2.1.8:7", "", "«IDEAS:Type» SumOfSetOfThings", "EARoot/EA2/EA1/EA8/EA297.htm", "5.png", "2578", "0", "", "Class0","{7A0A9E05-69B2-49e0-BBCC-7E2B9CC54B46}");
+tocTab[tocTab.length] = new Array("2.1.8:8", "", "«IDEAS:Type» UnionOfSetOfTypes", "EARoot/EA2/EA1/EA8/EA302.htm", "5.png", "2579", "0", "", "Class0","{B90B4F67-2BA9-4dbf-AD85-4894632C7642}");

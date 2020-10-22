@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("2.2.5:1", "", "Temporal Whole-Part Pattern", "EARoot/EA2/EA2/EA5/EA438.htm", "175.png", "43", "0", "", "Logical diagram0","{E53C06E6-F80F-4a05-A406-347D6C1B9D67}");
+tocTab[tocTab.length] = new Array("2.2.5:2", "", "Temporal Boundaries", "EARoot/EA2/EA2/EA5/EA440.htm", "175.png", "137", "0", "", "Logical diagram0","{E4AD3867-5B11-4743-9C51-639E68401338}");
+tocTab[tocTab.length] = new Array("2.2.5:3", "", "«IDEAS:TupleType» endBoundary", "EARoot/EA2/EA2/EA5/EA444.htm", "5.png", "1221", "0", "", "Class0","{BE2D98DB-7D41-475e-9EB9-9244A00EF6AA}");
+tocTab[tocTab.length] = new Array("2.2.5:4", "", "«IDEAS:TupleType» startBoundary", "EARoot/EA2/EA2/EA5/EA446.htm", "5.png", "1220", "0", "", "Class0","{5C747D91-1DBB-433a-B786-847C07CE57F4}");
+tocTab[tocTab.length] = new Array("2.2.5:5", "", "«IDEAS:TupleType» temporalBoundary", "EARoot/EA2/EA2/EA5/EA447.htm", "5.png", "1219", "0", "", "Class0","{95D055D9-332D-49a0-963F-E4DB5BE6E0F8}");
+tocTab[tocTab.length] = new Array("2.2.5:6", "", "«IDEAS:TupleType» temporalWholePart", "EARoot/EA2/EA2/EA5/EA448.htm", "5.png", "438", "0", "", "Class0","{A5F1B722-0378-4046-83EC-ACC7AC4F0A74}");

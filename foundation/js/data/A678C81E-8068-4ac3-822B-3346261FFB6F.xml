@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("1", "1", "«IDEAS:Model» Introduction", "EARoot/EA2.htm", "4.png", "", "", "{DD5936D9-554D-409c-8420-01E2408BE0FA}", "Package");
+tocTab[tocTab.length] = new Array("2", "1", "«IDEAS:Model» IDEAS Foundation", "EARoot/EA3.htm", "4.png", "", "", "{B510628E-9C52-4779-86D9-2ECE589E4305}", "Package");
+tocTab[tocTab.length] = new Array("3", "1", "«IDEAS:Model» Examples", "EARoot/EA4.htm", "4.png", "", "", "{191DFC19-0FD1-437c-8BA3-65D8EAC25F30}", "Package");

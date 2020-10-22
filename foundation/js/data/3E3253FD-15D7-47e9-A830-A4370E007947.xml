@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("2.2.4:1", "", "Period or Instant", "EARoot/EA2/EA2/EA4/EA423.htm", "175.png", "134", "0", "", "Logical diagram0","{8AEDAC36-7155-4148-BCD0-24C840008B12}");
+tocTab[tocTab.length] = new Array("2.2.4:2", "", "Happens In", "EARoot/EA2/EA2/EA4/EA425.htm", "175.png", "136", "0", "", "Logical diagram0","{012B0AEB-EF43-4550-80EF-E362115E5445}");
+tocTab[tocTab.length] = new Array("2.2.4:3", "", "«IDEAS:IndividualType» Instant", "EARoot/EA2/EA2/EA4/EA434.htm", "5.png", "1265", "0", "", "Class0","{FABF6158-23B8-4257-9DBA-35D1912D605A}");
+tocTab[tocTab.length] = new Array("2.2.4:4", "", "«IDEAS:IndividualType» Period", "EARoot/EA2/EA2/EA4/EA435.htm", "5.png", "1208", "0", "", "Class0","{9E5EDFCF-CF52-41f9-93D4-C12F47F0CD8A}");
+tocTab[tocTab.length] = new Array("2.2.4:5", "", "«IDEAS:IndividualType» PeriodOrInstant", "EARoot/EA2/EA2/EA4/EA436.htm", "5.png", "1207", "0", "", "Class0","{95B2C5BE-E97C-4bee-8926-7B739FD74D16}");
+tocTab[tocTab.length] = new Array("2.2.4:6", "", "«IDEAS:TupleType» happensIn", "EARoot/EA2/EA2/EA4/EA437.htm", "5.png", "1213", "0", "", "Class0","{66708EBF-453D-49ff-8BF6-88C838D83FA4}");

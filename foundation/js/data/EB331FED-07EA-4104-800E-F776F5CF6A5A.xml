@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("2.2.2:1", "", "Intentional Construction", "EARoot/EA2/EA2/EA2/EA324.htm", "175.png", "88", "0", "", "Logical diagram0","{89381993-69A2-4a8e-8515-C5AD3B524609}");
+tocTab[tocTab.length] = new Array("2.2.2:2", "", "«IDEAS:IndividualType» IntentionallyConstructedIndividual", "EARoot/EA2/EA2/EA2/EA328.htm", "5.png", "873", "0", "", "Class0","{66177FA6-B4E2-4754-B871-6C5A7082D217}");
+tocTab[tocTab.length] = new Array("2.2.2:3", "", "«IDEAS:TupleType» intentionallyConstructedTuple", "EARoot/EA2/EA2/EA2/EA329.htm", "5.png", "2227", "0", "", "Class0","{49B32936-C9BE-49f5-B5E3-00829ED41FB6}");
+tocTab[tocTab.length] = new Array("2.2.2:4", "", "«IDEAS:Type» IntentionallyConstructedThing", "EARoot/EA2/EA2/EA2/EA330.htm", "5.png", "872", "0", "", "Class0","{3F634476-F520-484d-A2FE-3031EBAB3B56}");
+tocTab[tocTab.length] = new Array("2.2.2:5", "", "«IDEAS:Type» IntentionallyConstructedType", "EARoot/EA2/EA2/EA2/EA331.htm", "5.png", "874", "0", "", "Class0","{33CB0271-4CEC-4181-B462-DF8550E4090B}");

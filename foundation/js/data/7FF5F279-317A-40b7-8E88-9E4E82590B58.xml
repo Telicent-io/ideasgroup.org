@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("2.1.1:1", "", "Disjoint", "EARoot/EA2/EA1/EA1/EA83.htm", "175.png", "306", "0", "", "Logical diagram0","{2CC3E2EC-D0C9-432e-AAD8-8E795A99CE7B}");
+tocTab[tocTab.length] = new Array("2.1.1:2", "", "«IDEAS:Type» SetOfDisjointIndividuals", "EARoot/EA2/EA1/EA1/EA87.htm", "5.png", "2514", "0", "", "Class0","{29E5448F-F15D-4803-ABD9-6D8AF51B9FD9}");
+tocTab[tocTab.length] = new Array("2.1.1:3", "", "«IDEAS:Type» SetOfDisjointThings", "EARoot/EA2/EA1/EA1/EA88.htm", "5.png", "2522", "0", "", "Class0","{C02FD20A-5B92-4c1a-8F8A-363581938DEE}");
+tocTab[tocTab.length] = new Array("2.1.1:4", "", "«IDEAS:Type» SetOfDisjointTypes", "EARoot/EA2/EA1/EA1/EA89.htm", "5.png", "2512", "0", "", "Class0","{7375A862-4786-4f52-A9D1-1537728B8B9E}");

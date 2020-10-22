@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Text</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">Text  : public   text</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">29/04/2007 14:49:40</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">20/03/2009 12:55:20</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">mmm</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{CE4F5057-EF88-4d69-9C65-412774A3BA23}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA7.htm">Diagram Conventions & Use of UML</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">&lt;p&gt;The IDEAS Model is represent here in UML. The UML language is not ideally suited to ontology specification in its native form. The UML language can be extended through the use of profiles. The IDEAS Model has been developed using a UML Profile - any UML elements that are not stereotyped by one of the IDEAS foundation elements will not be considered part of an IDEAS ontology. The IDEAS Foundation specifies the fundamental types that define the profile stereotypes. The super-subtype structure in IDEAS is quite comprehensive, and showing the super-type relationships on some diagrams can result in a number of crossed lines. In these cases, supertypes of a given type will be listed in italic text in the top-right-hand corner of the UML element box.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;The stereotype of an element in an IDEAS UML model is a shorthand for the element being an instance of the type refered to by the Stereotype, though the type must be one that has been defined in the root package of the foundation. Hence, if the stereotype is &lt;&lt;Individual&gt;&gt; then the element is an instance of an Individual. The following stereotyped classes, with their colour-coding are used in the model:&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;Individual&gt;&gt; An instance of an Individual - something with spatio-temporal extent [Grey(80%) R40G40B40]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;Type&gt;&gt; The specification of a Type [Pale Blue R153 G204 B255]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;IndividualType&gt;&gt; The specification of a Type whose members are Individuals [Light Orange R255 G173 B91]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;TupleType&gt;&gt; The specification of a Type whose members are tuples [Light Green R204 G255 B204]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;Powertype&gt;&gt; The specification of a Type that is the set of all subsets of a given Type [Lavender R204 G153 B255]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;Name&gt;&gt; The specification of a name, with the examplar text provided as a tagged value [Tan R255 G254 B153]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;NamingScheme&gt;&gt; The specification of a Type whose members are names [Yellow R255 G255 B0]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;The following stereotyped relationships are used in the model:&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;typeInstance&gt;&gt; a relationship between a type and one of its instances (UML:Dependency) [Red R255 G0 B0]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;powertypeInstance&gt;&gt; a relationship between a type and its powerset (UML:Dependency) [Red R255 G0 B0]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;nameTypeInstance&gt;&gt; a relationship between a name and its NameType (UML:Dependency) [Red R255 G0 B0]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;superSubtype&gt;&gt; a relationship between a type and one of its subtypes (UML:Generalisation) [Blue R0 G0 B255]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;wholePart&gt;&gt; a relationship between an individual and one of its parts (UML:Aggregation) [Green R0 G147 B0]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;namedBy&gt;&gt; a relationship between a name and the thing it names [Black R0 G0 B0]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;&lt;tuple&gt;&gt;/&lt;&lt;couple&gt; a relationship between a things (UML:n-ary relationship diamond) [Grey(80%) R40G40B40]&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Some Examples:&lt;br/&gt;&lt;/p&gt;</div>
+
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

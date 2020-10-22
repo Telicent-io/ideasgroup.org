@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("2.1.7:1", "", "Singletons, Doubletons, etc.", "EARoot/EA2/EA1/EA7/EA275.htm", "175.png", "275", "0", "", "Logical diagram0","{66382037-7691-4322-B16E-E72488152964}");
+tocTab[tocTab.length] = new Array("2.1.7:2", "", "«IDEAS:TupleType» doubletonTypeInstance", "EARoot/EA2/EA1/EA7/EA279.htm", "5.png", "2203", "0", "", "Class0","{13793402-97E6-4939-B4DF-C9E9EB581FAD}");
+tocTab[tocTab.length] = new Array("2.1.7:3", "", "«IDEAS:TupleType» quadrupletonTypeInstance", "EARoot/EA2/EA1/EA7/EA280.htm", "5.png", "2207", "0", "", "Class0","{FC90D541-D31D-4503-9A59-59313C12B3ED}");
+tocTab[tocTab.length] = new Array("2.1.7:4", "", "«IDEAS:TupleType» quintupletonTypeInstance", "EARoot/EA2/EA1/EA7/EA281.htm", "5.png", "2209", "0", "", "Class0","{E47C89CA-E83E-4992-8FBB-DB7F5232C0CB}");
+tocTab[tocTab.length] = new Array("2.1.7:5", "", "«IDEAS:TupleType» singletonTypeInstance", "EARoot/EA2/EA1/EA7/EA282.htm", "5.png", "2201", "0", "", "Class0","{DF44E463-26A3-4911-A822-C548316401C0}");
+tocTab[tocTab.length] = new Array("2.1.7:6", "", "«IDEAS:TupleType» tripletonTypeInstance", "EARoot/EA2/EA1/EA7/EA283.htm", "5.png", "2205", "0", "", "Class0","{968D4338-53DD-496f-AF6B-6ABF861EC115}");
+tocTab[tocTab.length] = new Array("2.1.7:7", "", "«IDEAS:Type» Doubleton", "EARoot/EA2/EA1/EA7/EA284.htm", "5.png", "2202", "0", "", "Class0","{FB95D079-2230-451e-B285-05C0B69B5C7D}");
+tocTab[tocTab.length] = new Array("2.1.7:8", "", "«IDEAS:Type» Quadrupleton", "EARoot/EA2/EA1/EA7/EA285.htm", "5.png", "2206", "0", "", "Class0","{B53ECC66-6BE0-4932-BDE2-750EA64B3543}");
+tocTab[tocTab.length] = new Array("2.1.7:9", "", "«IDEAS:Type» Quintupleton", "EARoot/EA2/EA1/EA7/EA286.htm", "5.png", "2208", "0", "", "Class0","{B7944B8D-A84F-4bb1-A1CE-96240B0279F7}");
+tocTab[tocTab.length] = new Array("2.1.7:10", "", "«IDEAS:Type» Singleton", "EARoot/EA2/EA1/EA7/EA287.htm", "5.png", "2200", "0", "", "Class0","{5547A79A-1046-48a8-8A81-F2D945E01EA6}");
+tocTab[tocTab.length] = new Array("2.1.7:11", "", "«IDEAS:Type» Tripleton", "EARoot/EA2/EA1/EA7/EA288.htm", "5.png", "2204", "0", "", "Class0","{5D339DF6-2F3C-4eb6-8247-A50A364062E5}");
